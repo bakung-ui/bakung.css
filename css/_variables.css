@@ -1,0 +1,209 @@
+/*----------------------
+  #VARIABLES
+  
+  - Colors
+  - Bakung defaults
+  - Indicator & Visual
+  - Z-index
+----------------------*/
+:root {
+  /*
+   * #7374BD oklch(0.59 0.11 281.88)
+   * #67AC36 oklch(0.67 0.17 134.85)
+   * #267766 oklch(0.52 0.08 176.14)
+   * #77426D oklch(0.46 0.09 334.34)
+   * #AC7D60 oklch(0.63 0.07 52.67)
+   * #B9B82D oklch(0.76 0.15 109.08)
+   * 
+   * accent     #7374BD
+   * 
+   * Low        #67AC36
+   * Normal     #B9B82D
+   * Important  #AC7D60
+   * Critical   #77426D
+   * 
+   * Info       #267766
+   * 
+   * Success    #67AC36
+   * Caution    #B9B82D
+   * Warning    #AC7D60
+   * Error      #77426D
+   * Danger     
+   */
+  /**************** Colors ****************/
+  --color-base-white: white;
+  /*TODO Baiki color-base 1 s/d 9, terkecuali 5*/
+  --color-base-1: oklch(0.99 0 0);
+  --color-base-2: ;
+  --color-base-5: oklch(0.98 0 0);
+  --color-base-6: oklch(0.96 0.02 285.26); /* oklch(0.93 0 0) */
+  --color-base-7: oklch(0.93 0.02 285.26); /* oklch(0.85 0 0) */
+  --color-base-8: oklch(0.9 0.02 285.26); /* oklch(0.8 0.01 198.21) */
+  --color-base-9: oklch(0.87 0.02 285.26); /* oklch(0.76 0.01 198.22) */
+  --color-base-10: oklch(0.77 0.02 285.26);
+  --color-base-20: oklch(0.67 0.02 285.26);
+  --color-base-30: oklch(0.57 0.02 285.26);
+  --color-base-40: oklch(0.47 0.02 285.26);
+  
+  --color-base-50: oklch(0.36 0.02 285.26);
+  
+  --color-base-60: oklch(0.31 0.02 285.26);
+  --color-base-70: oklch(0.26 0.02 285.26);
+  --color-base-80: oklch(0.21 0.02 285.26);
+  --color-base-90: oklch(0.16 0.02 285.26);
+  
+  --color-low-5: oklch(0.97 0.06 129.67);
+  --color-low-10: oklch(0.96 0.1 134.3);
+  --color-low-20: oklch(0.94 0.14 134.71);
+  --color-low-30: oklch(0.91 0.13 133.87);
+  --color-low-40: oklch(0.86 0.15 134.24);
+  --color-low-50: oklch(0.58 0.19 135.24);
+  --color-low-60: oklch(0.51 0.19 135.24);
+  --color-low-70: oklch(0.46 0.19 135.24);
+  --color-low-80: oklch(0.39 0.19 135.24);
+  --color-low-90: oklch(0.19 0.19 135.24);
+  
+  --color-normal-5: oklch(0.98 0.08 107.75);
+  --color-normal-10: oklch(0.96 0.1 106.96);
+  --color-normal-20: oklch(0.93 0.11 107.32);
+  --color-normal-30: oklch(0.91 0.14 107.68);
+  --color-normal-40: oklch(0.86 0.15 107.93);
+  --color-normal-50: oklch(0.58 0.15 108.19);
+  --color-normal-60: oklch(0.5 0.15 108.19);
+  --color-normal-70: oklch(0.44 0.15 108.19);
+  --color-normal-80: oklch(0.37 0.15 108.19);
+  --color-normal-90: oklch(0.2 0.15 108.19);
+  
+  --color-important-5: oklch(0.95 0.02 51.36);
+  --color-important-10: oklch(0.95 0.03 51.33);
+  --color-important-20: oklch(0.94 0.04 51.31);
+  --color-important-30: oklch(0.91 0.06 51.27);
+  --color-important-40: oklch(0.86 0.07 51.23);
+  --color-important-50: oklch(0.61 0.13 50.75);
+  --color-important-60: oklch(0.54 0.13 50.75);
+  --color-important-70: oklch(0.49 0.13 50.75);
+  --color-important-80: oklch(0.42 0.13 50.75);
+  --color-important-90: oklch(0.29 0.13 50.75);
+  
+  --color-critical-5: oklch(0.97 0.03 329.25);
+  --color-critical-10: oklch(0.96 0.04 329.32);
+  --color-critical-20: oklch(0.95 0.06 329.46);
+  --color-critical-30: oklch(0.92 0.09 329.69);
+  --color-critical-40: oklch(0.89 0.13 330.04);
+  --color-critical-50: oklch(0.63 0.18 335.23);
+  --color-critical-60: oklch(0.57 0.18 335.16);
+  --color-critical-70: oklch(0.52 0.18 335.16);
+  --color-critical-80: oklch(0.46 0.18 335.16);
+  --color-critical-90: oklch(0.23 0.22 335.7);
+  
+  --color-info-5: oklch(0.99 0.04 177.23);
+  --color-info-10: oklch(0.94 0.04 178.96);
+  --color-info-20: oklch(0.93 0.06 176.76);
+  --color-info-30: oklch(0.9 0.07 176.68);
+  --color-info-40: oklch(0.86 0.1 175.98);
+  --color-info-50: oklch(0.57 0.09 175.98);
+  --color-info-60: oklch(0.51 0.09 175.98);
+  --color-info-70: oklch(0.47 0.09 175.98);
+  --color-info-80: oklch(0.38 0.09 175.98);
+  --color-info-90: oklch(0.17 0.09 175.98);
+  
+  --color-success-5: oklch(0.97 0.06 129.67);
+  --color-success-10: oklch(0.96 0.1 134.3);
+  --color-success-20: oklch(0.94 0.14 134.71);
+  --color-success-30: oklch(0.91 0.13 133.87);
+  --color-success-40: oklch(0.86 0.15 134.24);
+  --color-success-50: oklch(0.58 0.19 135.24);
+  --color-success-60: oklch(0.51 0.19 135.24);
+  --color-success-70: oklch(0.46 0.19 135.24);
+  --color-success-80: oklch(0.39 0.19 135.24);
+  --color-success-90: oklch(0.19 0.19 135.24);
+  
+  --color-caution-5: oklch(0.98 0.08 107.75);
+  --color-caution-10: oklch(0.96 0.1 106.96);
+  --color-caution-20: oklch(0.93 0.11 107.32);
+  --color-caution-30: oklch(0.91 0.14 107.68);
+  --color-caution-40: oklch(0.86 0.15 107.93);
+  --color-caution-50: oklch(0.58 0.15 108.19);
+  --color-caution-60: oklch(0.5 0.15 108.19);
+  --color-caution-70: oklch(0.44 0.15 108.19);
+  --color-caution-80: oklch(0.37 0.15 108.19);
+  --color-caution-90: oklch(0.2 0.15 108.19);
+  
+  --color-warning-5: oklch(0.95 0.02 51.36);
+  --color-warning-10: oklch(0.95 0.03 51.33);
+  --color-warning-20: oklch(0.94 0.04 51.31);
+  --color-warning-30: oklch(0.91 0.06 51.27);
+  --color-warning-40: oklch(0.86 0.07 51.23);
+  --color-warning-50: oklch(0.61 0.13 50.75);
+  --color-warning-60: oklch(0.54 0.13 50.75);
+  --color-warning-70: oklch(0.49 0.13 50.75);
+  --color-warning-80: oklch(0.42 0.13 50.75);
+  --color-warning-90: oklch(0.29 0.13 50.75);
+  
+  --color-error-5: oklch(0.97 0.03 329.25);
+  --color-error-10: oklch(0.96 0.04 329.32);
+  --color-error-20: oklch(0.95 0.06 329.46);
+  --color-error-30: oklch(0.92 0.09 329.69);
+  --color-error-40: oklch(0.89 0.13 330.04);
+  --color-error-50: oklch(0.63 0.18 335.23);
+  --color-error-60: oklch(0.57 0.18 335.16);
+  --color-error-70: oklch(0.52 0.18 335.16);
+  --color-error-80: oklch(0.46 0.18 335.16);
+  --color-error-90: oklch(0.23 0.22 335.7);
+  
+  --color-danger-5: oklch(0.93 0.04 9.18);
+  --color-danger-10: oklch(0.91 0.06 10.23);
+  --color-danger-20: oklch(0.99 0.23 17.23);
+  --color-danger-30: oklch(0.91 0.23 17.23);
+  --color-danger-40: oklch(0.83 0.23 17.23);
+  --color-danger-50: oklch(0.7 0.23 17.23);
+  --color-danger-60: oklch(0.64 0.23 17.23);
+  --color-danger-70: oklch(0.61 0.23 17.23);
+  --color-danger-80: oklch(0.54 0.21 16.44);
+  --color-danger-90: oklch(0.22 0.23 17.23);
+  
+  
+  /************ BAKUNG DEFAULTS ************/
+  --bg-color-off: oklch(0.9 0.02 285.26);
+  --bg-color-active: oklch(0.97 0.01 285.51);
+  
+  /* .dialog, .popper */
+  --border-color-light: oklch(0.9 0.02 285.18);
+  
+  /*
+   --shadow-float: dialog, [popover], .appear--offcanvas, .notice--notify
+   --shadow-float-alt-1: .popper, .navbar > .nav > .nav__item > .nav
+   --shadow-clickable: button
+   --shadow-border: .tabs, .card
+   */
+  --shadow-float-alt-1: drop-shadow(0 2px 2px var(--transparent-color));
+  --shadow-border: drop-shadow(0 1px 1px var(--transparent-color));
+  
+  --as-btn--paddings: .21lh 1em .26lh;
+  --as-btn--paddings: .2lh .75lh .25lh;
+  
+  /************ INDICATOR & VISUAL ************/
+  --indicator-dimension: 1em;
+
+  /**************** Z-index ****************/
+  --z-index-layover: 900;
+  --z-index-dropdown: 1000;
+  --z-index-sticky: 1020;
+  --z-index-fixed: 1030;
+  --z-index-offcanvas-backdrop: 1040;
+  --z-index-offcanvas: 1045;
+  --z-index-modal-backdrop: 1050;
+  --z-index-modal: 1055;
+  --z-index-popover: 1070;
+  --z-index-tooltip: 1080;
+
+  /**************** Dimension variations ****************/
+  --avatar-size: 1;
+  --badge-size: 1;
+  --btn-size: 1;
+  --toggle-size: 1;
+  --popover-space: 1;
+  --visual-aside-size: 1;
+  --visual-indicator-size: 1;
+
+} /*end of :root*/
