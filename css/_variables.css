@@ -2,11 +2,27 @@
   #VARIABLES
   
   - Colors
-  - Bakung defaults
+  - Set up new variables and overrides for minimax.css
   - Indicator & Visual
   - Z-index
+  - Dimension variations
+  
 ----------------------*/
+
+/* 
+ * // Import the entire package's main file (if defined in package.json style/main fields)
+ * @import "my-npm-package";
+ *
+ * // Import a specific file from the package
+ * @import "my-npm-package/path/to/specific/file.css";
+ * 
+ * Comment out this line if you want to rewrite all variables in @bakung-ui/minimax.css/css/_variables.css
+ * or in development when you manually link the file in HTML <head>.
+ */
+@import "@bakung-ui/minimax.css/css/_variables.css";
+
 :root {
+  /**************** Colors ****************/
   /*
    * #7374BD oklch(0.59 0.11 281.88)
    * #67AC36 oklch(0.67 0.17 134.85)
@@ -30,7 +46,6 @@
    * Error      #77426D
    * Danger     
    */
-  /**************** Colors ****************/
   --color-base-white: white;
   /*TODO Baiki color-base 1 s/d 9, terkecuali 5*/
   --color-base-1: oklch(0.99 0 0);
@@ -163,7 +178,7 @@
   --color-danger-90: oklch(0.22 0.23 17.23);
   
   
-  /************ BAKUNG DEFAULTS ************/
+  /**************** Set up new variables and overrides for minimax.css ****************/
   --bg-color-off: oklch(0.9 0.02 285.26);
   --bg-color-active: oklch(0.97 0.01 285.51);
   
@@ -182,9 +197,22 @@
   --as-btn--paddings: .21lh 1em .26lh;
   --as-btn--paddings: .2lh .75lh .25lh;
   
-  /************ INDICATOR & VISUAL ************/
+  /************ Indicator & Visual ************/
   --indicator-dimension: 1em;
 
+  /************ SPACES ************/
+   --space-distance-1: 1rem;
+   --space-distance-2: 1.25rem;
+   --space-distance-3: 1.5rem;
+   --space-distance-4: 1.75rem;
+   --space-distance-5: 2rem;
+   
+   --space-group-1: .125rem;
+   --space-group-2: .25rem;
+   --space-group-3: .5rem;
+   --space-group-4: .75rem;
+   --space-group-5: 1rem;
+  
   /**************** Z-index ****************/
   --z-index-layover: 900;
   --z-index-dropdown: 1000;
@@ -205,5 +233,4 @@
   --popover-space: 1;
   --visual-aside-size: 1;
   --visual-indicator-size: 1;
-
 } /*end of :root*/

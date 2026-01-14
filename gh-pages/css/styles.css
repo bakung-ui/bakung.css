@@ -1,0 +1,80 @@
+/* Table */
+.tg  {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+.tg td{
+    border-color:black;
+    overflow:hidden;
+    padding:5px;
+    word-break:normal;
+    min-width: 5rem;
+}
+
+.tg th{
+    border-color:black;
+    border-style:solid;
+    border-width:1px;
+    font-family:Arial, sans-serif;
+    font-size:12px;
+    font-weight:normal;
+    overflow:hidden;
+    padding:5px;
+    word-break:normal;
+    min-width: 40px;
+}
+
+.tg .tg-0lax{
+    text-align:left;
+    vertical-align:top;
+}
+
+.tg .tg-0pky{
+    border-color:inherit;
+    text-align:left;
+    vertical-align:top
+}
+
+
+/**/
+.top-block {
+    margin-bottom: 2rem;
+    box-shadow: 0 1px 3px 0 var(--transparent-color);
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+}
+
+[data-title="keywords-description"] {
+    font-size: 1.5rem;
+}
+
+.block-samples {
+    margin: 1rem 0;
+    padding: 1rem;
+    border: 1px solid var(--color-base-7);
+
+    details {
+        margin: 0 -1rem -1rem;
+        background-color: var(--bg-color-text);
+    }
+
+    pre {
+        border: 0;
+    }
+}
+
+.bakungcss-notice {
+    .notice__aside {
+        background-color: var(--color-base-40);
+        top: -.5rem;
+        left: -.5rem;
+        margin: -1rem 0 -1rem -1rem;
+        padding: 1rem; 
+    }
+}
+
+.h1 {
+    border-bottom: 2px solid var(--color-base-10);
+    margin-top: 0;
+}
