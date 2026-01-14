@@ -24,13 +24,9 @@ https://github.com/bakung-ui/bakung.css/releases/latest/
 
 **CDN**
 
-TODO
+https://app.unpkg.com/@bakung-ui/bakung.css@latest/
 
-https://app.unpkg.com/@bakung-ui/bakung.css
-
-https://cdn.jsdelivr.net/npm/@bakung-ui/bak
-
-https://bundle.run/@bakung-ui/bak
+https://cdn.jsdelivr.net/npm/@bakung-ui/bakung.css@latest/
 
 
 **REQUIREMENTS**
