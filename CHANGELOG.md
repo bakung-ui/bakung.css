@@ -1,6 +1,10 @@
 # Changes to bakung.css
 
-### 26.0.1
+### 26.1.2
+
+* Update package.json, add @bakung-ui/minimax.css in devDependencies 
+
+### 26.01.1
 
 * Update package.json add entry point for unpkg
 
