@@ -13,6 +13,10 @@
   ],
   "author": "Tria Warman @triawarman",
   "style": "dist/bakung.min.css",
+  "exports": {
+    "unpkg": "./dist/bakung.min.css",
+    "style": "./dist/bakung.min.css"
+  },
   "files": [
     "css",
     "dist",

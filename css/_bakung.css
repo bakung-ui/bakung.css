@@ -2056,7 +2056,7 @@ Sizes
   }
 
   .popper--list {
-    .popper__content {
+    > .popper__content {
       display: flex;
       flex-flow: column nowrap;
       margin: -1rem;
@@ -2080,22 +2080,13 @@ Sizes
     margin: 0;
     padding: .25rem 1rem;
     outline: none;
-
+    
     &:focus {
-      box-shadow: none;
       text-decoration: underline 2px dashed var(--color-base-9);
     }
-
-    &:is(a, button, .btn) {
-      scale: none;
-    }
-
-    &:hover {
+    
+    &:where(a:not(.btn)):hover {
       background-color: var(--bg-color-active);
-    }
-
-    &:not(.nav__item):active {
-      filter: brightness(105%);
     }
   }
 
