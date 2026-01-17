@@ -178,15 +178,11 @@ Sizes
   
 *************************/
 
-@import '_variables.css';
-/* INFO: Comment out this line when in development mode when you manually link the file in HTML <head>. */
-@import "@bakung-ui/minimax.css/css/_minimax.css";
+/* INFO: Comment out this line during development if you are manually linking the file in the HTML <head>. */
+@import "@bakung-ui/minimax.css/css/_styles.css";
 
-
-/* INFO: Set up new styles and overrides for minimax.css */
-@layer base {
-  
-}
+/* INFO: Uncomment this line to apply new styles and overrides for @bakung-ui/minimax.css/css/_minimax.css */
+/* @layer base {} */
 
 @layer ui {
   /*

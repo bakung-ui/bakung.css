@@ -54,17 +54,18 @@ https://cdn.jsdelivr.net/npm/@bakung-ui/bakung.css@latest/
 ```
 [MAIN FOLDER]
  ├  css                     // Files in here are editable
- |    ├  _variables.css     // Especially this one
- |    └  _bakung.css        // You can also edit this, though only to a limited extent
+ |    ├  _variables.css     // Especially this one       
+ |    ├  _styles.css        // You can also edit this, though only to a limited extent
+ |    └  index.css          // Entry file to merge _variables.css with _styles.css
  └  dist                    
-      ├  _bakung.min.css    // without variables
+      ├  _bakung.min.css    // without _variables.css
       ├  bakung.css
       └  bakung.min.css     // you shall use this for production
 ```
 
 Feel free to customize files in the css folder especially _variables.css file.
 
-To customize the styles to your preference, make sure `@bakung-ui/minimax.css` is installed , then you can either modify the minimax.css files directly or apply overrides within _variables.css and _bakung.css file.
+To customize the styles to your preference, make sure `@bakung-ui/minimax.css` is installed , then you can either modify the minimax.css files directly or apply overrides within _variables.css and _styles.css file.
 
 After making changes, run command `npm run build` to build your changes, check your new build files in dist folder.
 

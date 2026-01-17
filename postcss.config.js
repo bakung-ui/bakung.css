@@ -1,6 +1,8 @@
 module.exports = (ctx) => ({
-    plugins: {
-        'postcss-import': {},
-        'cssnano': {},
-    },
+    plugins: [
+        require('postcss-import') (),
+        require('cssnano') ({
+            preset: 'default'
+        })
+    ]
 });

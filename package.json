@@ -1,7 +1,7 @@
 {
   "name": "@bakung-ui/bakung.css",
   "description": "HTML UI library pure CSS, lightweight, no javascript",
-  "version": "26.1.0",
+  "version": "26.1.2",
   "keywords": [
     "css",
     "css-library",
@@ -13,6 +13,10 @@
   ],
   "author": "Tria Warman @triawarman",
   "style": "dist/bakung.min.css",
+  "exports": {
+    "unpkg": "./dist/bakung.min.css",
+    "style": "./dist/bakung.min.css"
+  },
   "files": [
     "css",
     "dist",
@@ -29,6 +33,7 @@
   },
   "bugs": "https://github.com/bakung-ui/bakung.css/issues",
   "devDependencies": {
+    "@bakung-ui/minimax.css": "^26.1.3",
     "cssnano": "^7.1.2",
     "postcss": "^8.5.6",
     "postcss-cli": "^11.0.1",
@@ -36,10 +41,10 @@
     "postcss-import": "^16.1.1"
   },
   "scripts": {
-    "build:_bakungMinify": "postcss css/_bakung.css > dist/_bakung.min.css --use cssnano --no-map",
-    "build:combine": "postcss css/_bakung.css -o dist/bakung.css --use postcss-import --use postcss-discard-comments --no-map",
+    "build:_bakungMinify": "postcss css/_styles.css > dist/_bakung.min.css --use postcss-import --use cssnano --no-map",
+    "build:combine": "postcss css/index.css -o dist/bakung.css --use postcss-import --use cssnano --no-map --env build:combine",
     "build:minify": "postcss dist/bakung.css > dist/bakung.min.css --no-map",
-    "build": "npm run build:_bakungMinify && npm run build:combine && npm run build:minify --importDep noimport"
+    "build": "npm run build:_bakungMinify && npm run build:combine && npm run build:minify"
   },
   "engines": {
     "node": ">=v22.16.0",

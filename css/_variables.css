@@ -2,22 +2,16 @@
   #VARIABLES
   
   - Colors
-  - Set up new variables and overrides for minimax.css
+  - Set up new variables and overrides for @bakung-ui/minimax.css/css/_variables.css
   - Indicator & Visual
   - Z-index
   - Dimension variations
   
 ----------------------*/
 
-/* 
- * // Import the entire package's main file (if defined in package.json style/main fields)
- * @import "my-npm-package";
- *
- * // Import a specific file from the package
- * @import "my-npm-package/path/to/specific/file.css";
- * 
- * Comment out this line if you want to rewrite all variables in @bakung-ui/minimax.css/css/_variables.css
- * or in development when you manually link the file in HTML <head>.
+ /* 
+ * Comment out this line to rewrite all variables in @bakung-ui/minimax.css/css/_variables.css,
+ * or when manually linking the file in HTML <head> during development.
  */
 @import "@bakung-ui/minimax.css/css/_variables.css";
 
@@ -178,7 +172,7 @@
   --color-danger-90: oklch(0.22 0.23 17.23);
   
   
-  /**************** Set up new variables and overrides for minimax.css ****************/
+  /**************** Set up new variables and overrides for @bakung-ui/minimax.css/css/_variables.css ****************/
   --bg-color-off: oklch(0.9 0.02 285.26);
   --bg-color-active: oklch(0.97 0.01 285.51);
   
