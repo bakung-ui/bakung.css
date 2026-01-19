@@ -14,6 +14,8 @@
 
 * Update package.json for build scripts and add entry point for unpkg.
 
+* Generate more variations distribution files.
+
 ### 26.1.2
 
 * Update package.json, add @bakung-ui/minimax.css in devDependencies 
