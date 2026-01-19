@@ -6,6 +6,8 @@
 
 * Add css/utilities.css.
 
+* Named css/_bakung.css into css/_styles.css.
+
 * Add css/index.css file to act as entry file for merge css files.
 
 * Update postcss.config.js.
