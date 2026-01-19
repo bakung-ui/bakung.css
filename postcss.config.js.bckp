@@ -1,0 +1,10 @@
+module.exports = {
+  plugins: [
+    require('postcss-import') (),
+    require('cssnano') ({
+      preset: 'default'
+    }),
+    require('postcss-normalize-charset') (),
+    require('postcss-custom-properties') ({ preserve: false, strict: false }),
+  ]
+};

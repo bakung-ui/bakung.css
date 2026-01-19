@@ -1,22 +1,35 @@
-/*----------------------
-  #VARIABLES
-  
-  - Colors
-  - Set up new variables and overrides for @bakung-ui/minimax.css/css/_variables.css
-  - Indicator & Visual
-  - Z-index
-  - Dimension variations
-  
-----------------------*/
+/*************************
+######################
+>>> TABLE OF CONTENTS:
+######################
+## Import variables
 
- /* 
- * Comment out this line to rewrite all variables in @bakung-ui/minimax.css/css/_variables.css,
- * or when manually linking the file in HTML <head> during development.
- */
+## Colors
+
+## Overrides variables
+  ## Set up new variables and overrides for @bakung-ui/minimax.css/css/_variables.css
+
+## Indicator & Visual
+
+## Spaces
+
+## Z-index
+
+## Dimension variations
+  
+*************************/
+
+/*
+## Import variables
+*/
+
+/* INFO: Comment out this line during development if you are manually linking the file in the HTML <head>. */
 @import "@bakung-ui/minimax.css/css/_variables.css";
 
 :root {
-  /**************** Colors ****************/
+  /*
+  ## Colors
+  */
   /*
    * #7374BD oklch(0.59 0.11 281.88)
    * #67AC36 oklch(0.67 0.17 134.85)
@@ -41,14 +54,13 @@
    * Danger     
    */
   --color-base-white: white;
-  /*TODO Baiki color-base 1 s/d 9, terkecuali 5*/
   --color-base-1: oklch(0.99 0 0);
-  --color-base-2: ;
+  --color-base-2: oklch(0.99 0 0);
   --color-base-5: oklch(0.98 0 0);
-  --color-base-6: oklch(0.96 0.02 285.26); /* oklch(0.93 0 0) */
-  --color-base-7: oklch(0.93 0.02 285.26); /* oklch(0.85 0 0) */
-  --color-base-8: oklch(0.9 0.02 285.26); /* oklch(0.8 0.01 198.21) */
-  --color-base-9: oklch(0.87 0.02 285.26); /* oklch(0.76 0.01 198.22) */
+  --color-base-6: oklch(0.96 0.02 285.26);
+  --color-base-7: oklch(0.93 0.02 285.26);
+  --color-base-8: oklch(0.9 0.02 285.26);
+  --color-base-9: oklch(0.87 0.02 285.26);
   --color-base-10: oklch(0.77 0.02 285.26);
   --color-base-20: oklch(0.67 0.02 285.26);
   --color-base-30: oklch(0.57 0.02 285.26);
@@ -171,8 +183,9 @@
   --color-danger-80: oklch(0.54 0.21 16.44);
   --color-danger-90: oklch(0.22 0.23 17.23);
   
-  
-  /**************** Set up new variables and overrides for @bakung-ui/minimax.css/css/_variables.css ****************/
+  /*
+  ## Overrides variables of @bakung-ui/minimax.css/css/_variables.css
+  */
   --bg-color-off: oklch(0.9 0.02 285.26);
   --bg-color-active: oklch(0.97 0.01 285.51);
   
@@ -191,10 +204,14 @@
   --as-btn--paddings: .21lh 1em .26lh;
   --as-btn--paddings: .2lh .75lh .25lh;
   
-  /************ Indicator & Visual ************/
+  /*
+  ## Indicator & Visual
+  */
   --indicator-dimension: 1em;
 
-  /************ SPACES ************/
+  /*
+  ## Spaces
+  */
    --space-distance-1: 1rem;
    --space-distance-2: 1.25rem;
    --space-distance-3: 1.5rem;
@@ -207,7 +224,9 @@
    --space-group-4: .75rem;
    --space-group-5: 1rem;
   
-  /**************** Z-index ****************/
+  /*
+  ## Z-index
+  */
   --z-index-layover: 900;
   --z-index-dropdown: 1000;
   --z-index-sticky: 1020;
@@ -219,7 +238,9 @@
   --z-index-popover: 1070;
   --z-index-tooltip: 1080;
 
-  /**************** Dimension variations ****************/
+  /*
+  ## Dimension variations
+  */
   --avatar-size: 1;
   --badge-size: 1;
   --btn-size: 1;

@@ -34,17 +34,21 @@
   "bugs": "https://github.com/bakung-ui/bakung.css/issues",
   "devDependencies": {
     "@bakung-ui/minimax.css": "^26.1.3",
+    "@csstools/postcss-global-data": "^4.0.0",
     "cssnano": "^7.1.2",
     "postcss": "^8.5.6",
     "postcss-cli": "^11.0.1",
-    "postcss-discard-comments": "^7.0.5",
-    "postcss-import": "^16.1.1"
+    "postcss-custom-properties": "^15.0.0",
+    "postcss-import": "^16.1.1",
+    "postcss-normalize-charset": "^7.0.1"
   },
   "scripts": {
-    "build:_bakungMinify": "postcss css/_styles.css > dist/_bakung.min.css --use postcss-import --use cssnano --no-map",
-    "build:combine": "postcss css/index.css -o dist/bakung.css --use postcss-import --use cssnano --no-map --env build:combine",
-    "build:minify": "postcss dist/bakung.css > dist/bakung.min.css --no-map",
-    "build": "npm run build:_bakungMinify && npm run build:combine && npm run build:minify"
+    "build:lite": "npx postcss css/_styles.css -o dist/bakung-lite.min.css --use postcss-import --use cssnano --use postcss-normalize-charset --no-map",
+    "build:liteUtils": "cat css/_styles.css css/_utilities.css | npx postcss -o dist/bakung-lite-utils.min.css --use postcss-import --use cssnano --use postcss-normalize-charset --no-map",
+    "build:liteVars": "npx postcss css/_variables.css -o dist/_variables.css --use postcss-import --no-map && npx postcss css/_styles.css -o dist/_styles.css --use postcss-import --no-map && cat dist/_variables.css dist/_styles.css | npx postcss -o dist/bakung-lite-vars.min.css --use cssnano --use postcss-normalize-charset --no-map && rm dist/_styles.css dist/_variables.css",
+    "build:bakung": "npx postcss css/index.css -o dist/bakung.css --use postcss-import --use cssnano --use postcss-normalize-charset --env noMinimize --no-map && npx postcss dist/bakung.css -o dist/bakung.min.css --no-map",
+    "build": "npm run build:lite && npm run build:liteUtils && npm run build:liteVars && npm run build:bakung",
+    "build:static": "npx postcss dist/bakung-lite-utils.min.css -o dist/bakung-static-lite-utils.min.css --no-map --env buildStatic && npx postcss dist/bakung-lite.min.css -o dist/bakung-static-lite.min.css --no-map --env buildStatic && npx postcss dist/bakung.css -o dist/bakung-static.min.css --no-map --env buildStatic"
   },
   "engines": {
     "node": ">=v22.16.0",
