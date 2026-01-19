@@ -67,6 +67,7 @@ https://cdn.jsdelivr.net/npm/@bakung-ui/bakung.css@latest/
     ├ bakung-lite-utils.static.min.css  // Without variables
     ├ bakung-lite-vars.min.css          // Included _variables.css
     ├ bakung-lite.min.css               // Without _utilities.css & _variables.css
+    ├ bakung-lite.static.min.css        // Without variables
     ├ bakung.css                        
     ├ bakung.min.css                    // You shall use this for production
     └ bakung.min.static.css             // Without variables
