@@ -1,12 +1,10 @@
 # bakung.css
 
-> Build on desktop, aim for mobile
+> A lightweight zero-JS HTML-UI library designed to build on desktop and aim for mobile.
 
-HTML UI library pure CSS, lightweight, no javascript.
+Bakung.css has zero config customization, easy to tweak without needing to know SASS/SCSS or even touch the original CSS file. We achieve this by leveraging CSS variables.
 
-Zero-Config Customization, easy to tweak without needing to know SASS/SCSS or even touch the original CSS file. We achieve this by leveraging CSS variables.
-
-Bakung.css versioning is based on the year and month. Version 26.1.0 was launched in January 2026; all future releases, including minor updates, will follow this `year/month` format, for ex. `27.3.0` is release in March 2027.
+Our versioning is based on the year and month. Version 26.1.0 was launched in January 2026; all future releases, including minor updates, will follow this `year/month` format, for ex. `27.3.0` is release in March 2027.
 
 
 **INSTALL**
@@ -57,7 +55,8 @@ https://cdn.jsdelivr.net/npm/@bakung-ui/bakung.css@latest/
 
 ```
 [MAIN FOLDER]
-  ├ css                           // Files in here are editable      
+  ├ css                           // Files in here are editable
+  | ├ _helpers.css                // You can edit, though only to a limited extent
   | ├ _styles.css                 // You can edit, though only to a limited extent
   | ├ _utilities.css              
   | ├ _variables.css              

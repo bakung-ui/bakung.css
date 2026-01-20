@@ -4,7 +4,9 @@
 
 * Named css/_bakung.css into css/_styles.css.
 
-* Add css/utilities.css.
+* Add css/_utilities.css.
+
+* Add css/_helpers.css.
 
 * Named css/_bakung.css into css/_styles.css.
 

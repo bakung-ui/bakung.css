@@ -43,10 +43,10 @@
     "postcss-normalize-charset": "^7.0.1"
   },
   "scripts": {
-    "build:lite": "npx postcss css/_styles.css -o dist/bakung-lite.min.css --use postcss-import --use cssnano --use postcss-normalize-charset --no-map",
-    "build:liteUtils": "cat css/_styles.css css/_utilities.css | npx postcss -o dist/bakung-lite-utils.min.css --use postcss-import --use cssnano --use postcss-normalize-charset --no-map",
-    "build:liteVars": "npx postcss css/_variables.css -o dist/_variables.css --use postcss-import --no-map && npx postcss css/_styles.css -o dist/_styles.css --use postcss-import --no-map && cat dist/_variables.css dist/_styles.css | npx postcss -o dist/bakung-lite-vars.min.css --use cssnano --use postcss-normalize-charset --no-map && rm dist/_styles.css dist/_variables.css",
-    "build:bakung": "npx postcss css/index.css -o dist/bakung.css --use postcss-import --use cssnano --use postcss-normalize-charset --env noMinimize --no-map && npx postcss dist/bakung.css -o dist/bakung.min.css --no-map",
+    "build:lite": "cat css/_styles.css css/_helpers.css | npx postcss -o dist/bakung-lite.min.css --use postcss-import --use cssnano --use postcss-normalize-charset --no-map",
+    "build:liteUtils": "cat css/_styles.css css/_helpers.css css/_utilities.css | npx postcss -o dist/bakung-lite-utils.min.css --use postcss-import --use cssnano --use postcss-normalize-charset --no-map",
+    "build:liteVars": "npx postcss css/_variables.css -o dist/_variables.css --use postcss-import --no-map && cat css/_styles.css css/_helpers.css | npx postcss -o dist/_styles.css --use postcss-import --no-map && cat dist/_variables.css dist/_styles.css | npx postcss -o dist/bakung-lite-vars.min.css --use cssnano --use postcss-normalize-charset --no-map && rm dist/_styles.css dist/_variables.css",
+    "build:bakung": "npx postcss css/index.css -o dist/bakung.css --use postcss-import --use cssnano --use postcss-normalize-charset --no-map --env noMinimize && npx postcss dist/bakung.css -o dist/bakung.min.css --no-map",
     "build:static": "npx postcss dist/bakung-lite-utils.min.css -o dist/bakung-lite-utils.static.min.css --no-map --env buildStatic && npx postcss dist/bakung-lite.min.css -o dist/bakung-lite.static.min.css --no-map --env buildStatic && npx postcss dist/bakung.css -o dist/bakung.static.min.css --no-map --env buildStatic",
     "build": "npm run build:lite && npm run build:liteUtils && npm run build:liteVars && npm run build:bakung && npm run build:static"
   },

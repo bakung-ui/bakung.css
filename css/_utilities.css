@@ -755,6 +755,7 @@
   }
   
   /**************** Visibilities ****************/
+  /* INFO: Moved to _helpers.css
   .invisible {
     position: absolute;
     height: 0;
@@ -773,7 +774,7 @@
     opacity: 1;
     overflow: initial;
   }
-  
+  */
   
   /*
   ### Layout
