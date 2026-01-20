@@ -6,16 +6,13 @@
 
 ## Colors
 
-## Overrides variables
-  ## Set up new variables and overrides for @bakung-ui/minimax.css/css/_variables.css
+## Overrides variables for @bakung-ui/minimax.css/css/_variables.css
 
-## Indicator & Visual
+## Components
 
 ## Spaces
 
 ## Z-index
-
-## Dimension variations
   
 *************************/
 
@@ -184,7 +181,7 @@
   --color-danger-90: oklch(0.22 0.23 17.23);
   
   /*
-  ## Overrides variables of @bakung-ui/minimax.css/css/_variables.css
+  ## Overrides variables for @bakung-ui/minimax.css/css/_variables.css
   */
   --bg-color-off: oklch(0.9 0.02 285.26);
   --bg-color-active: oklch(0.97 0.01 285.51);
@@ -205,24 +202,38 @@
   --as-btn--paddings: .2lh .75lh .25lh;
   
   /*
-  ## Indicator & Visual
+  ## Components
   */
-  --indicator-dimension: 1em;
+  --breadcrumb-divider: attr(be-breadcrumb-divider, '/');
+  --appear-size: 300px;
+  --accordions--height: 290px;
+  --cards--slide--height: auto;
+  --slide-prev-nav: attr(be-prev-nav, '<');
+  --slide-next-nav: attr(be-next-nav, '>');
 
   /*
   ## Spaces
   */
-   --space-distance-1: 1rem;
-   --space-distance-2: 1.25rem;
-   --space-distance-3: 1.5rem;
-   --space-distance-4: 1.75rem;
-   --space-distance-5: 2rem;
-   
-   --space-group-1: .125rem;
-   --space-group-2: .25rem;
-   --space-group-3: .5rem;
-   --space-group-4: .75rem;
-   --space-group-5: 1rem;
+  --avatar-size: 1;
+  --badge-size: 1;
+  --btn-size: 1;
+  --toggle-size: 1;
+  --popper-space: 1;
+  --indicator-dimension: 1em;
+  --visual-aside-size: 1;
+  --visual-indicator-size: 1;
+  
+  --space-distance-1: 1rem;
+  --space-distance-2: 1.25rem;
+  --space-distance-3: 1.5rem;
+  --space-distance-4: 1.75rem;
+  --space-distance-5: 2rem;
+  
+  --space-group-1: .125rem;
+  --space-group-2: .25rem;
+  --space-group-3: .5rem;
+  --space-group-4: .75rem;
+  --space-group-5: 1rem;
   
   /*
   ## Z-index
@@ -237,15 +248,17 @@
   --z-index-modal: 1055;
   --z-index-popover: 1070;
   --z-index-tooltip: 1080;
-
-  /*
-  ## Dimension variations
-  */
-  --avatar-size: 1;
-  --badge-size: 1;
-  --btn-size: 1;
-  --toggle-size: 1;
-  --popover-space: 1;
-  --visual-aside-size: 1;
-  --visual-indicator-size: 1;
+  
 } /*end of :root*/
+
+
+
+
+
+
+
+
+
+
+
+

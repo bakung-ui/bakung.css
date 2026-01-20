@@ -336,7 +336,7 @@ Sizes
   }
 
   .btn:not(:where(button, [type="button"], [type="reset"], [type="submit"])) {
-    padding: var(--as-btn--paddings, .21lh 1em .26lh);
+    padding: var(--as-btn--paddings);
   }
 
   .btn--icon {
@@ -582,12 +582,11 @@ Sizes
   }
 
   .toggle__control {
-    --the-size: var(--toggle-size, 1);
     align-self: center;
 
     border: none;
-    height: calc(.75em * var(--the-size));
-    width: calc(1.5em * var(--the-size));
+    height: calc(.75em * var(--toggle-size));
+    width: calc(1.5em * var(--toggle-size));
 
     position: relative;
 
@@ -640,9 +639,9 @@ Sizes
     &::before {
       background: var(--bg-color-off);
       border: var(--controls--border);
-      border-radius: calc(1em * var(--the-size));
+      border-radius: calc(1em * var(--toggle-size));
 
-      height: calc(.5em * var(--the-size));
+      height: calc(.5em * var(--toggle-size));
       width: 100%;
       transition: background 200ms ease-in-out;
 
@@ -657,11 +656,11 @@ Sizes
       border-radius: 50%;
       box-shadow: none;
 
-      height: calc(.75em * var(--the-size));
-      width: calc(.75em * var(--the-size));
+      height: calc(.75em * var(--toggle-size));
+      width: calc(.75em * var(--toggle-size));
 
       position: absolute;
-      inset: 0 calc(100% - calc(.75em * var(--the-size))) auto auto;
+      inset: 0 calc(100% - calc(.75em * var(--toggle-size))) auto auto;
 
       transition: inset 200ms ease-in-out;
     }
@@ -1049,8 +1048,6 @@ Sizes
   
   /**************** Breadcrumb ****************/
   .navbar--breadcrumb {
-    --breadcrumb-divider: attr(be-breadcrumb-divider, '/');
-
     .navbar__brand::after,
     > .nav > .nav__item:not(:last-child)::after {
       content: var(--breadcrumb-divider);
@@ -1916,7 +1913,6 @@ Sizes
   }
 
   .popper {
-    --the-space: var(--popper-space, 1);
     background: var(--bg-color);
 
     border: 0 var(--popper--border-style, solid)  var(--popper--border-color, var(--border-color-light));
@@ -1924,7 +1920,7 @@ Sizes
     border-radius: var(--popper--borders-radius, .125rem);
 
     position: absolute;
-    inset: auto auto calc(100% + (.25rem * var(--the-space))) 50%;
+    inset: auto auto calc(100% + (.25rem * var(--popper-space))) 50%;
 
     max-height: 75vh;
     min-width: 5rem;
@@ -1941,10 +1937,10 @@ Sizes
     &::before {
       content: "";
 
-      height: calc(100% + (1rem * var(--the-space)));
-      width: calc(100% + (1rem * var(--the-space)));
+      height: calc(100% + (1rem * var(--popper-space)));
+      width: calc(100% + (1rem * var(--popper-space)));
       position: absolute;
-      inset: calc(-.5rem * var(--the-space)) auto auto calc(-.5rem * var(--the-space));
+      inset: calc(-.5rem * var(--popper-space)) auto auto calc(-.5rem * var(--popper-space));
       z-index: -1;
     }
 
@@ -2010,56 +2006,56 @@ Sizes
   }
 
   .popper--tl {
-    inset: auto auto calc(100% + (.25rem * var(--the-space))) 0;
+    inset: auto auto calc(100% + (.25rem * var(--popper-space))) 0;
     translate: 0;
   }
 
   .popper--tr {
-    inset: auto 0 calc(100% + (.25rem * var(--the-space))) auto;
+    inset: auto 0 calc(100% + (.25rem * var(--popper-space))) auto;
     translate: 0;
   }
 
   .popper--bl {
-    inset: calc(100% + (.25rem * var(--the-space))) auto auto 0;
+    inset: calc(100% + (.25rem * var(--popper-space))) auto auto 0;
     translate: 0;
   }
 
   .popper--bm {
-    inset: calc(100% + (.25rem * var(--the-space))) auto auto 50%;
+    inset: calc(100% + (.25rem * var(--popper-space))) auto auto 50%;
   }
 
   .popper--br {
-    inset: calc(100% + (.25rem * var(--the-space))) 0 auto auto;
+    inset: calc(100% + (.25rem * var(--popper-space))) 0 auto auto;
     translate: 0;
   }
 
   .popper--lt {
-    inset: 0 calc(100% + (.25rem * var(--the-space))) auto auto;
+    inset: 0 calc(100% + (.25rem * var(--popper-space))) auto auto;
     translate: 0;
   }
 
   .popper--lm {
-    inset: 50% calc(100% + (.25rem * var(--the-space))) auto auto;
+    inset: 50% calc(100% + (.25rem * var(--popper-space))) auto auto;
     translate: 0 -50%;
   }
 
   .popper--lb {
-    inset: auto calc(100% + (.25rem * var(--the-space))) 0 auto;
+    inset: auto calc(100% + (.25rem * var(--popper-space))) 0 auto;
     translate: 0;
   }
 
   .popper--rt {
-    inset: 0 auto auto calc(100% + (.25rem * var(--the-space)));
+    inset: 0 auto auto calc(100% + (.25rem * var(--popper-space)));
     translate: 0;
   }
 
   .popper--rm {
-    inset: 50% auto auto calc(100% + (.25rem * var(--the-space)));
+    inset: 50% auto auto calc(100% + (.25rem * var(--popper-space)));
     translate: 0 -50%;
   }
 
   .popper--rb {
-    inset: auto auto 0 calc(100% + (.25rem * var(--the-space)));
+    inset: auto auto 0 calc(100% + (.25rem * var(--popper-space)));
     translate: 0;
   }
 
@@ -2151,18 +2147,18 @@ Sizes
     /* exit styles */
     display: none;
     opacity: 0;
-    transform: translateY(calc(.25rem * var(--the-space)));
+    transform: translateY(calc(.25rem * var(--popper-space)));
 
     &:is(.popper--bl, .popper--bm, .popper--br) {
-      transform: translateY(calc(-.25rem * var(--the-space)));
+      transform: translateY(calc(-.25rem * var(--popper-space)));
     }
 
     &:is(.popper--lt, .popper--lm, .popper--lb) {
-      transform: translateX(calc(.25rem * var(--the-space)));
+      transform: translateX(calc(.25rem * var(--popper-space)));
     }
 
     &:is(.popper--rt, .popper--rm, .popper--rb) {
-      transform: translateX(calc(-.25rem * var(--the-space)));
+      transform: translateX(calc(-.25rem * var(--popper-space)));
     }
 
     &[data-popper-active],
@@ -2179,18 +2175,18 @@ Sizes
       /* before-change styles */
       @starting-style {
         opacity: 0;
-        transform: translateY(calc(.25rem * var(--the-space)));
+        transform: translateY(calc(.25rem * var(--popper-space)));
 
         &:is(.popper--bl, .popper--bm, .popper--br) {
-          transform: translateY(calc(-.25rem * var(--the-space)));
+          transform: translateY(calc(-.25rem * var(--popper-space)));
         }
 
         &:is(.popper--lt, .popper--lm, .popper--lb) {
-          transform: translateX(calc(.25rem * var(--the-space)));
+          transform: translateX(calc(.25rem * var(--popper-space)));
         }
 
         &:is(.popper--rt, .popper--rm, .popper--rb) {
-          transform: translateX(calc(-.25rem * var(--the-space)));
+          transform: translateX(calc(-.25rem * var(--popper-space)));
         }
       }
     }
@@ -2484,8 +2480,6 @@ Sizes
   }
 
   .appear--fix {
-    --target-size: var(--appear-size, 300px);
-
     grid: 0 / 100%;
     max-height: initial;
 
@@ -2493,7 +2487,7 @@ Sizes
     }
 
     &:has(> [data-appear-handler]:checked) {
-      grid: var(--target-size) / 100%;
+      grid: var(--appear-size) / 100%;
     }
 
     &:is(.appear--right) {
@@ -2502,11 +2496,11 @@ Sizes
 
       .appear__content {
         height: 100%;
-        width: var(--target-size);
+        width: var(--appear-size);
       }
 
       &:has(> [data-appear-handler]:checked) {
-        grid: 100% / auto var(--target-size);
+        grid: 100% / auto var(--appear-size);
       }
     }
 
@@ -2514,7 +2508,7 @@ Sizes
       grid: auto 0 / 100%;
 
       &:has(> [data-appear-handler]:checked) {
-        grid: auto var(--target-size) / 100%;
+        grid: auto var(--appear-size) / 100%;
       }
     }
 
@@ -2524,18 +2518,18 @@ Sizes
 
       .appear__content {
         height: 100%;
-        width: var(--target-size);
+        width: var(--appear-size);
       }
 
       &:has(> [data-appear-handler]:checked) {
-        grid: 100% / var(--target-size);
+        grid: 100% / var(--appear-size);
       }
     }
   }
 
   /**************** Off canvas ****************/
   .appear--offcanvas {
-    --target-size: var(--appear-size, 300px);
+    /* --appear-size: 300px; */
 
     background: oklch(from var(--bg-color-text) l c h / .35);
     backdrop-filter: blur(.25rem);
@@ -2604,7 +2598,7 @@ Sizes
     &:is(.appear--fix) {
       .appear__content {
         min-height: initial;
-        height: var(--target-size);
+        height: var(--appear-size);
         max-height: initial;
         min-width: initial;
         max-width: initial;
@@ -2612,16 +2606,16 @@ Sizes
 
       &:is(.appear--right) .appear__content {
         height: 100%;
-        width: var(--target-size);
+        width: var(--appear-size);
       }
 
       &:is(.appear--bottom) .appear__content {
-        height: var(--target-size);
+        height: var(--appear-size);
       }
 
       &:is(.appear--left) .appear__content {
         height: 100%;
-        width: var(--target-size);
+        width: var(--appear-size);
       }
     }
   }
@@ -2652,7 +2646,7 @@ Sizes
   .accordions {
     border-radius: .125rem;
 
-    height: var(--accordions--height, 290px);
+    height: var(--accordions--height);
     display: flex;
 
     margin: 0 0 1rem;
@@ -3006,7 +3000,7 @@ Sizes
   
   /**************** Slide ****************/
   .cards--slide {
-    height: var(--cards--slide--height, auto);
+    height: var(--cards--slide--height);
     
     grid: 60vh minmax(min-content, auto) minmax(min-content, auto) / 
       auto-flow minmax(50%, 1fr) minmax(50%, 1fr);
@@ -3072,9 +3066,6 @@ Sizes
   }
   
   .cards--horizontal-nav {
-    --slide-prev-nav: attr(be-prev-nav, '<');
-    --slide-next-nav: attr(be-next-nav, '>');
-    
     &::scroll-button(*) {
       cursor: pointer;
       
@@ -4128,7 +4119,7 @@ Sizes
 
     /**************** Appear ****************/
     .appear--vmd-offcanvas {
-      --target-size: var(--appear-size, 300px);
+      /* --appear-size: 300px; */
 
       background: oklch(from var(--bg-color-text) l c h / .35);
       backdrop-filter: blur(.25rem);
@@ -4197,7 +4188,7 @@ Sizes
       &:is(.appear--fix) {
         .appear__content {
           min-height: initial;
-          height: var(--target-size);
+          height: var(--appear-size);
           max-height: initial;
           min-width: initial;
           max-width: initial;
@@ -4205,16 +4196,16 @@ Sizes
 
         &:is(.appear--right) .appear__content {
           height: 100%;
-          width: var(--target-size);
+          width: var(--appear-size);
         }
 
         &:is(.appear--bottom) .appear__content {
-          height: var(--target-size);
+          height: var(--appear-size);
         }
 
         &:is(.appear--left) .appear__content {
           height: 100%;
-          width: var(--target-size);
+          width: var(--appear-size);
         }
       }
     }
@@ -4305,7 +4296,7 @@ Sizes
 
     /**************** Appear ****************/
     .appear--vsm-offcanvas {
-      --target-size: var(--appear-size, 300px);
+      /* --appear-size: 300px; */
 
       background: oklch(from var(--bg-color-text) l c h / .35);
       backdrop-filter: blur(.25rem);
@@ -4374,7 +4365,7 @@ Sizes
       &:is(.appear--fix) {
         .appear__content {
           min-height: initial;
-          height: var(--target-size);
+          height: var(--appear-size);
           max-height: initial;
           min-width: initial;
           max-width: initial;
@@ -4382,16 +4373,16 @@ Sizes
 
         &:is(.appear--right) .appear__content {
           height: 100%;
-          width: var(--target-size);
+          width: var(--appear-size);
         }
 
         &:is(.appear--bottom) .appear__content {
-          height: var(--target-size);
+          height: var(--appear-size);
         }
 
         &:is(.appear--left) .appear__content {
           height: 100%;
-          width: var(--target-size);
+          width: var(--appear-size);
         }
       }
     }
