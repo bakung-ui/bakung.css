@@ -2,6 +2,16 @@
 
 ### 
 
+* Add and update variables name.
+
+* Update popper__item.
+
+* Update popper__line.
+
+* Fix .data-is-invalid into \[data-is-invalid\].
+
+* Fix .data-is-valid into \[data-is-valid\].
+
 * Named css/_bakung.css into css/_styles.css.
 
 * Add css/_utilities.css.
@@ -18,7 +28,7 @@
 
 * Update package.json for build scripts and add entry point for unpkg.
 
-* Generate more variations distribution files.
+* Add compiled static files (replaces variable with static value) to distribution files.
 
 ### 26.1.2
 

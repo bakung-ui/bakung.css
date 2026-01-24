@@ -354,6 +354,7 @@ Sizes
     &:focus,
     &:hover {
       scale: 1.1;
+      /* filter: invert(.4); */
     }
 
     &:hover {
@@ -709,7 +710,7 @@ Sizes
 
       color: var(--font-color-alt-2);
 
-      background: var(--bg-color);
+      background: var(--divider--background, var(--bg-color));
 
       position: absolute;
       inset: auto auto auto 50%;
@@ -767,6 +768,13 @@ Sizes
   .img--fit-contain {
     object-fit: contain;
   }
+  
+  .img--fit-fill {
+    display: block;
+    object-fit: fill;
+    height: 100%;
+    width: 100%;
+  }
 
   /**************** Video ****************/
   .video--fluid {
@@ -798,6 +806,7 @@ Sizes
   ### Navbar
   */
   .navbar {
+    background: var(--navbar--background, var(--bg-color));
     display: flex;
     flex-flow: row wrap;
 
@@ -848,7 +857,7 @@ Sizes
   }
 
   .nav {
-    background: var(--bg-color);
+    background: var(--nav--background, var(--bg-color));
 
     width: max-content;
 
@@ -861,7 +870,7 @@ Sizes
     list-style: none;
 
     .nav {
-      background: var(--bg-color);
+      /* background: var(--nav--background, var(--bg-color)); */
 
       position: absolute;
       inset: 100% auto auto 0;
@@ -1018,9 +1027,9 @@ Sizes
         padding: .5rem 1rem;
       }
       
-        &:hover {
-          filter: brightness(98%);
-        }
+      &:hover {
+        filter: brightness(98%);
+      }
     }
 
     .nav__item:is(:focus, :focus-within),
@@ -1084,6 +1093,8 @@ Sizes
     display:grid;
 
     text-align: center;
+    
+    z-index: 1;
   }
   
   .step__header {
@@ -1269,13 +1280,13 @@ Sizes
 
   .tab__nav[data-tab-active],
   .tab__nav:has([data-tab-select-handler]:checked) {
-    background: var(--bg-color);
+    background: var(--tab__nav_-checked--background, var(--bg-color));
 
     z-index:  100;
   }
 
   .tabs__content {
-    background: var(--bg-color);
+    background: var(--tabs__content--background, var(--bg-color));
 
     border: var(--boundary--border);
       border-width: 1px;
@@ -1579,7 +1590,7 @@ Sizes
   .dialog {
     color: var(--dialog--font-color, revert-layer);
 
-    background: var(--dialog--bg-color, var(--bg-color));
+    background: var(--dialog--background, var(--bg-color));
 
     border: 0 var(--dialog--border-style, solid)  var(--dialog--border-color, var(--border-color-light));
       border-width: var(--dialog--borders-width, 1px);
@@ -1913,7 +1924,7 @@ Sizes
   }
 
   .popper {
-    background: var(--bg-color);
+    background: var(--popper--background, var(--bg-color));
 
     border: 0 var(--popper--border-style, solid)  var(--popper--border-color, var(--border-color-light));
       border-width: var(--popper--borders-width, 1px);
@@ -1976,33 +1987,44 @@ Sizes
     margin: 0;
     padding: .25rem 1rem;
     outline: none;
-
+    
+    text-align: left;
+    
+    :where(&) {
+      background-color: inherit;
+    }
+    
     &:focus {
       box-shadow: none;
       text-decoration: underline 2px dashed var(--color-base-9);
     }
 
-    &:is(a, button, .btn) {
+    &:focus,
+    &:hover {
       scale: none;
     }
-
+    
     &:hover {
-      background-color: var(--bg-color-active);
+      /* background-color: var(--bg-color-active); */
     }
-
-    &:not(.nav__item):active {
-      filter: brightness(105%);
+    
+    &:is(a, button, .btn):hover {
+      filter: brightness(103%);
     }
   }
 
-  .popper__line::before {
-    content: "";
-    border: var(--boundary--border);
-    border-width: 0 0 1px;
-    height: 0;
+  .popper__line {
+    z-index: 1;
+    
+    &::before {
+      content: "";
+      border: var(--boundary--border);
+      border-width: 0 0 1px;
+      height: 0;
 
-    display: block;
-    padding: 0;
+      display: block;
+      padding: 0;
+    }
   }
 
   .popper--tl {
@@ -2353,7 +2375,7 @@ Sizes
       
       position: relative;
       
-      height: calc(100% - 1rem); /* INFO: Prevent img overflow */
+      height: 100%;
       max-height: unset;
       width: initial;
       max-width: unset;
@@ -2546,7 +2568,7 @@ Sizes
     transition: visibility 350ms ease-in-out;
 
     .appear__content {
-      background: var(--offcanvas__content--bg-color, var(--bg-color));
+      background: var(--appear--offcanvas__-appear__content--background, var(--bg-color));
 
       min-height: 50px;
       height: auto;
@@ -2644,6 +2666,7 @@ Sizes
   ### Accordions
   */
   .accordions {
+    background: var(--accordions-background, var(--bg-color));
     border-radius: .125rem;
 
     height: var(--accordions--height);
@@ -2693,7 +2716,7 @@ Sizes
     cursor: pointer;
 
     color: var(--accordion__header--font-color, revert-layer);
-    background: var(--accordion__header--font-color, var(--bg-color-clickable));
+    background: var(--accordion__header--background, var(--bg-color-clickable));
     border: 0 var(--accordion__header--border-style, solid)  var(--accordion__header--border-color, var(--border-color-boundary));
       border-width: 0 1px 0 0;
 
@@ -2816,7 +2839,7 @@ Sizes
   ### Cards
   */
   .card {
-    background: var(--color-base-1);
+    background: var(--card--background, var(--color-base-1));
     
     filter: var(--shadow-border);
 
@@ -3358,7 +3381,7 @@ Sizes
 
     margin: auto auto var(--elements-block-level-space, .5rem);
 
-    .group__label {
+    :where(&) .group__label {
       color: var(--font-color-alt-1);
       background: var(--bg-color);
     }
@@ -3395,6 +3418,10 @@ Sizes
     }
   }
 
+  /**
+   * You can rewrite [data-is-valid] into .data-is-valid, and
+   * [data-is-invalid] into .data-is-invalid, and
+   */
   .feedback,
   .valid-feedback,
   .invalid-feedback {
@@ -3403,23 +3430,23 @@ Sizes
     margin-bottom: .25rem;
 
     /* INFO: Show all */
-    /* Alt: .form__control.data-is-valid */
+    /* Alt: .form__control[data-is-valid] */
     :where(form[data-was-validated]) &,
-    :where(.form__group:is(.data-is-valid,
-                            .data-is-invalid),
-           .form__group:has(.data-is-valid,
-                            .data-is-invalid)) & {
+    :where(.form__group:is([data-is-valid],
+                            [data-is-invalid]),
+           .form__group:has([data-is-valid],
+                            [data-is-invalid])) & {
       display: block;
     }
   }
 
   .valid-feedback,
-  :where(.form__group:is(.data-is-valid), .form__group:has(.data-is-valid)) .feedback {
+  :where(.form__group:is([data-is-valid]), .form__group:has([data-is-valid])) .feedback {
     color: var(--color-success-80);
   }
 
   .invalid-feedback,
-  :where(.form__group:is(.data-is-invalid), .form__group:has(.data-is-invalid)) .feedback {
+  :where(.form__group:is([data-is-invalid]), .form__group:has([data-is-invalid])) .feedback {
     color: var(--color-caution-80);
   }
 
@@ -3439,7 +3466,7 @@ Sizes
 
   form:not([novalidate]) .form__control:not([novalidate]):where(:has(:user-valid:not(:is(:placeholder-shown))), :is(:user-valid:not(:is(:placeholder-shown)))),
   form[data-was-validated] .form__group:has(.valid-feedback) .form__control,
-  .form__group:has(.data-is-valid) .form__control {
+  .form__group:has([data-is-valid]) .form__control {
     &:not(.form__control--validation-icon) {
       border-color: var(--color-success-60);
     }
@@ -3456,7 +3483,7 @@ Sizes
 
   form:not([novalidate]) .form__control:not([novalidate]):where(:has(:user-invalid), :is(:user-invalid)),
   form[data-was-validated] .form__group:has(.invalid-feedback) .form__control,
-  .form__group:has(.data-is-invalid) .form__control {
+  .form__group:has([data-is-invalid]) .form__control {
     &:not(.form__control--validation-icon) {
       border-color: var(--color-caution-60);
     }
@@ -4058,7 +4085,7 @@ Sizes
         }
 
         > .nav__item:first-child {
-          margin-top: -110%; /*INFO: simple hack */
+          margin-top: -110%; /* INFO: for animation */
 
           transition: margin-top 350ms ease-in-out;
         }
@@ -4075,7 +4102,7 @@ Sizes
           display: none;
           margin: .5rem -1rem -.5rem -1rem;
           padding: 0 0 0 1rem;
-          
+
           transition: none;
         }
       }
@@ -4089,9 +4116,9 @@ Sizes
           padding: .5rem 1rem;
         }
         
-          &:hover {
-            filter: brightness(98%);
-          }
+        &:hover {
+          filter: brightness(96%);
+        }
       }
 
       .nav__item:is(:focus, :focus-within),
@@ -4136,7 +4163,7 @@ Sizes
       transition: visibility 350ms ease-in-out;
 
       .appear__content {
-        background: var(--offcanvas__content--bg-color, var(--bg-color));
+        background: var(--appear--offcanvas__-appear__content--background, var(--bg-color));
 
         min-height: 50px;
         height: auto;
@@ -4235,7 +4262,7 @@ Sizes
         }
 
         > .nav__item:first-child {
-          margin-top: -110%; /*INFO: simple hack */
+          margin-top: -110%; /* INFO: for animation */
 
           transition: margin-top 350ms ease-in-out;
         }
@@ -4252,7 +4279,7 @@ Sizes
           display: none;
           margin: .5rem -1rem -.5rem -1rem;
           padding: 0 0 0 1rem;
-          
+
           transition: none;
         }
       }
@@ -4266,9 +4293,9 @@ Sizes
           padding: .5rem 1rem;
         }
         
-          &:hover {
-            filter: brightness(98%);
-          }
+        &:hover {
+          filter: brightness(98%);
+        }
       }
 
       .nav__item:is(:focus, :focus-within),
@@ -4313,7 +4340,7 @@ Sizes
       transition: visibility 350ms ease-in-out;
 
       .appear__content {
-        background: var(--offcanvas__content--bg-color, var(--bg-color));
+        background: var(--appear--offcanvas__-appear__content--background, var(--bg-color));
 
         min-height: 50px;
         height: auto;
