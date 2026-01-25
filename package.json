@@ -1,15 +1,16 @@
 {
   "name": "@bakung-ui/bakung.css",
-  "description": "HTML UI library pure CSS, lightweight, no javascript",
+  "description": "A lightweight, zero-JS composable HTML-UI library designed for those who build on desktop and aim for mobile.",
   "version": "26.1.2",
   "keywords": [
     "css",
+    "css-framework",
     "css-library",
-    "css-ui",
-    "css-theme",
-    "pure-css",
     "css-only",
-    "lightweight-css"
+    "pure-css",
+    "lightweight-css",
+    "web-components",
+    "responsive"
   ],
   "author": "Tria Warman @triawarman",
   "style": "dist/bakung.min.css",

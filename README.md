@@ -1,6 +1,6 @@
 # bakung.css
 
-> A lightweight zero-JS HTML-UI library designed to build on desktop and aim for mobile.
+> A lightweight, zero-JS composable HTML-UI library designed for those who build on desktop and aim for mobile.
 
 Bakung.css has zero config customization, easy to tweak without needing to know SASS/SCSS or even touch the original CSS file. We achieve this by leveraging CSS variables.
 
@@ -92,6 +92,11 @@ When changing the `font-family` in your CSS, ensure you also update the correspo
 
 Please read the [contribution guidelines](CONTRIBUTING.md) in order to make the
 contribution process easy and effective for everyone involved.
+
+
+## Plugin guideline
+
+If you intend to create repositories or distribution packages related to bakung.css, please follow the bakung-ui guidelines to ensure discoverability and ease of use for the community, [See the guideline](CONTRIBUTING.md#plugin-guidelines).
 
 
 ## 
