@@ -15,6 +15,8 @@ Sizes
 ## Overrides and set up new styles
 
 ## Component (Widget) & Element
+### A (Link)
+
 ### Avatar
 ### Badge
     └ Chip
@@ -92,6 +94,16 @@ Sizes
   /*
   ## Component (Widget) & Element
   */
+  
+  
+  /*
+  ### Link
+  */
+  a {
+    :where(&.ignore-visited):visited {
+        color: currentColor;
+    }
+  }
   
   /*
   ### Avatar
@@ -330,7 +342,7 @@ Sizes
   ### Button
   */
   .btn {
-    --btn--font-size: calc(var(--btn--font-size, 1rem) * var(--btn-size));
+    font-size: calc(var(--btn--font-size) * var(--btn-size));
 
     transition: color 500ms ease-out, background 500ms ease-out, border 500ms ease-out;
   }
@@ -340,6 +352,7 @@ Sizes
   }
 
   .btn--icon {
+    --btn--font-size: var(--btn--icon-font-size, 1em);
     background: none;
     border: none;
     border-radius: 50%;
@@ -365,7 +378,8 @@ Sizes
       translate: 0 .125em;
     }
   }
-
+  /*
+   * INFO:  TEST
   .btn--accent, .btn--low, .btn--normal, .btn--important, .btn--critical, .btn--success, .btn--info, .btn--caution, .btn--warning, .btn--error, .btn--danger {
     &:not(:disabled):focus,
     &:not(:disabled):hover {
@@ -376,7 +390,7 @@ Sizes
       filter: brightness(110%);
     }
   }
-
+  */
   .btn--accent {
     color: white;
     background: var(--accent-color);
@@ -576,8 +590,8 @@ Sizes
     display: inline-flex;
     align-items: baseline;
 
-    &:has(:is([data-toggle-handler-on], [data-toggle-handler-off-on]):not(:checked)) .active-visible,
-    &:has([data-toggle-handler-off]:not(:checked)) .active-invisible {
+    &:has(:where([data-toggle-handler-on], [data-toggle-handler-off-on]):not(:checked)) .active-visible,
+    &:has([data-toggle-handler-off]:not(:checked), [data-toggle-handler-off-on]:checked) .active-invisible {
       display: none;
     }
   }
@@ -594,6 +608,7 @@ Sizes
     display: flex;
     margin: 0 .5em;
     padding: 0;
+    align-items: center;
 
 
     & > label {
@@ -620,8 +635,11 @@ Sizes
         outline: var(--focus-outline);
     }
 
-    &:has(:is([data-toggle-handler-on], [data-toggle-handler-off-on]):checked)::after {
-      inset: 0 0 auto auto;
+    &:has(:is([data-toggle-handler-on], [data-toggle-handler-off-on]):checked) {
+      .toggle__indicator,
+      &::after {
+        inset: 0 0 auto auto;
+      }
     }
 
     &:has(:is([data-toggle-handler-off], [data-toggle-handler-on], [data-toggle-handler-off-on]):disabled) > label {
@@ -642,29 +660,38 @@ Sizes
       border: var(--controls--border);
       border-radius: calc(1em * var(--toggle-size));
 
-      height: calc(.5em * var(--toggle-size));
+      height: calc(var(--toggle-path-size, .5em) * var(--toggle-size));
       width: 100%;
       transition: background 200ms ease-in-out;
-
-      transform: translate(0, 25%);
     }
-
+    
     /* indicator */
-    &::after {
-      background: var(--bg-color-clickable);
-
-      border: var(--controls--border);
-      border-radius: 50%;
-      box-shadow: none;
-
-      height: calc(.75em * var(--toggle-size));
-      width: calc(.75em * var(--toggle-size));
-
-      position: absolute;
-      inset: 0 calc(100% - calc(.75em * var(--toggle-size))) auto auto;
-
-      transition: inset 200ms ease-in-out;
+    &:has(> .toggle__indicator)::after {
+      display: none;
     }
+  }
+  
+  /* indicator */
+  .toggle__indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .toggle__control::after, .toggle__indicator {
+    background: var(--bg-color-clickable);
+
+    border: var(--controls--border);
+    border-radius: 50%;
+    box-shadow: none;
+
+    height: calc(.75em * var(--toggle-size));
+    width: calc(.75em * var(--toggle-size));
+
+    position: absolute;
+    inset: 0 calc(100% - calc(.75em * var(--toggle-size))) auto auto;
+
+    transition: inset 200ms ease-in-out;
   }
 
   .toggle__control:has(:is([data-toggle-handler-on], [data-toggle-handler-off-on]):checked),
@@ -673,6 +700,7 @@ Sizes
       background: var(--color-base-5);
     }
 
+    .toggle__indicator,
     &::after {
       background: var(--accent-color);
     }
@@ -682,9 +710,27 @@ Sizes
     display: inline-flex;
     flex-flow: column-reverse;
 
-    > .toggle__control {
+    .toggle__control {
       margin: .5em 0;
       transform: rotate(270deg);
+    }
+
+    .toggle__control > * {
+      align-self: normal;
+    }
+    
+    .toggle__control::before {
+      align-self: normal;
+
+      translate: 0 25%;
+    }
+    
+    .toggle__control:has(.toggle__indicator)::before {
+      translate: unset;
+    }
+
+    .toggle__control::after {
+      
     }
   }
 
@@ -829,6 +875,7 @@ Sizes
     }
 
     /* .navbar--*compact */
+    &:where([data-navbar-active]),
     &:has([data-toggle-navbar-handler]:checked) {
       .active-invisible {
         display: none;
@@ -1039,7 +1086,7 @@ Sizes
       }
     }
 
-    :where(&).navbar--compact-expand,
+    :where(&)[data-navbar-active],
     &:has([data-toggle-navbar-handler]:checked) {
       > .nav {
         display: block;
@@ -1138,6 +1185,14 @@ Sizes
     min-width: .5rem;
     
     display: inline-flex;
+    margin: initial;
+    padding: initial;
+    
+    /* INFO: reset button */
+    &:active, &:focus {
+      transform: unset;
+      filter: unset;
+    }
     
     &:has(.visual-aside, .visual-indicator) {
       padding: .25rem;
@@ -1225,7 +1280,8 @@ Sizes
       }
     }
     
-    .step__indicator:not(:has(.visual-aside, .visual-indicator)) {
+    /* .step__indicator:not(:has(.visual-aside, .visual-indicator)) { */
+    .step__indicator {
       background: var(--accent-color);
 
       min-height: .75rem;
@@ -1434,7 +1490,7 @@ Sizes
       transition: opacity 200ms ease-in-out, inset 200ms ease-in-out;
     }
 
-    &:is(.tooltip--active)::before,
+    &:is([data-tooltip-active])::before,
     &:is(.tooltip--focus):focus::before,
     &:hover::before {
       inset: -.5rem auto auto 50%;
@@ -1473,7 +1529,7 @@ Sizes
       transition: opacity 200ms ease-in-out, inset 200ms ease-in-out;
     }
 
-    &:is(.tooltip--active)::after,
+    &:is([data-tooltip-active])::after,
     &:is(.tooltip--focus):focus::after,
     &:hover::after {
       inset: auto auto calc(100% + .5rem) 50%;
@@ -1493,7 +1549,7 @@ Sizes
       translate: 0 -50%;
     }
     
-    &:is(.tooltip--active)::before,
+    &:is([data-tooltip-active])::before,
     &:is(.tooltip--focus):focus::before,
     &:hover::before {
       inset: 50% auto auto 100%;
@@ -1505,7 +1561,7 @@ Sizes
       transform: translateY(-50%);
     }
 
-    &:is(.tooltip--active)::after,
+    &:is([data-tooltip-active])::after,
     &:is(.tooltip--focus):focus::after,
     &:hover::after {
       inset: 50% auto auto calc(100% + .55rem);
@@ -1518,7 +1574,7 @@ Sizes
       transform: rotate(0deg) translateX(-50%);
     }
 
-    &:is(.tooltip--active)::before,
+    &:is([data-tooltip-active])::before,
     &:is(.tooltip--focus):focus::before,
     &:hover::before {
       inset: auto auto -.5rem 50%;
@@ -1530,7 +1586,7 @@ Sizes
       transform: translateX(-50%);
     }
 
-    &:is(.tooltip--active)::after,
+    &:is([data-tooltip-active])::after,
     &:is(.tooltip--focus):focus::after,
     &:hover::after {
       inset: calc(100% + .5rem) auto auto 50%;
@@ -1544,7 +1600,7 @@ Sizes
       translate: 0 -50%;
     }
 
-    &:is(.tooltip--active)::before,
+    &:is([data-tooltip-active])::before,
     &:is(.tooltip--focus):focus::before,
     &:hover::before {
       inset: 50% 100% auto auto;
@@ -1555,7 +1611,7 @@ Sizes
       transform: translateY(-50%);
     }
     
-    &:is(.tooltip--active)::after,
+    &:is([data-tooltip-active])::after,
     &:is(.tooltip--focus):focus::after,
     &:hover::after {
       inset: 50% calc(100% + .55rem) auto auto;
@@ -2213,30 +2269,40 @@ Sizes
       }
     }
   }
-
+  
+  
   /*
   ### Panel
   */
   .panel {
     display: flex;
     flex-flow: column nowrap;
+    /*
     gap: 1rem;
     padding: 1rem;
+    */
+    
+    gap: .5rem;
+    padding: .5rem;
   }
 
   .panel__header {
+    padding: .5rem;
   }
   
   .panel__body {
-    display: flex;
-    gap: 1rem;
-    flex-flow: column nowrap;
+    /*TODO: oend bermasalah sama direct element, grid, dialog*/
+    /*
+    display:flex;
+    flex-flow:column nowrap;
+    gap:1rem;
+    align-items:center;
     padding: 0 .5rem;
-    
-    align-items: center;
+    */
+    padding: .5rem;
 
     overflow: auto;
-
+    /*
     & > * {
       position: relative;
       inset: auto;
@@ -2248,6 +2314,7 @@ Sizes
 
       transform: none;
     }
+    */
   }
     
   :where(.panel__header, .panel__body) > * {
@@ -2425,6 +2492,7 @@ Sizes
 
     transition: grid 350ms ease-in-out, visibility 350ms ease-in-out;
 
+    &:where([data-appear-active]),
     &:has(> :where([data-appear-handler]:checked)) {
       grid: 1fr / 100%;
     
@@ -2440,9 +2508,9 @@ Sizes
     }
   }
 
-  .appear-sibling {
+  .appear-aside {
       flex: 1 1 auto;
-      overflow:auto;
+      /* overflow:auto; */
   }
 
   .appear__overflow {
@@ -2474,6 +2542,7 @@ Sizes
       position: static;
     }
 
+    &:where([data-appear-active]),
     &:has(> [data-appear-handler]:checked) {
       grid: 100% / auto 1fr;
     }
@@ -2486,6 +2555,7 @@ Sizes
       position: static;
     }
 
+    &:where([data-appear-active]),
     &:has(> [data-appear-handler]:checked) {
       grid: auto 1fr / 100%;
     }
@@ -2496,6 +2566,7 @@ Sizes
     max-height: initial;
     max-width: 40vw;
 
+    &:where([data-appear-active]),
     &:has(> [data-appear-handler]:checked) {
       grid: 100% / 1fr;
     }
@@ -2508,6 +2579,7 @@ Sizes
     .appear__content {
     }
 
+    &:where([data-appear-active]),
     &:has(> [data-appear-handler]:checked) {
       grid: var(--appear-size) / 100%;
     }
@@ -2521,6 +2593,7 @@ Sizes
         width: var(--appear-size);
       }
 
+      &:where([data-appear-active]),
       &:has(> [data-appear-handler]:checked) {
         grid: 100% / auto var(--appear-size);
       }
@@ -2529,6 +2602,7 @@ Sizes
     &:is(.appear--bottom) {
       grid: auto 0 / 100%;
 
+      &:where([data-appear-active]),
       &:has(> [data-appear-handler]:checked) {
         grid: auto var(--appear-size) / 100%;
       }
@@ -2543,6 +2617,7 @@ Sizes
         width: var(--appear-size);
       }
 
+      &:where([data-appear-active]),
       &:has(> [data-appear-handler]:checked) {
         grid: 100% / var(--appear-size);
       }
@@ -2584,6 +2659,7 @@ Sizes
       transition: translate 350ms ease-in-out;
     }
 
+    &:where([data-appear-active]),
     &:has(> [data-appear-handler]:checked) {
       visibility: visible;
 
@@ -2658,7 +2734,8 @@ Sizes
     }
   }
 
-  html:has(:where(.appear--offcanvas, .appear--offcanvas-vsm, .appear--offcanvas-vmd, .appear--offcanvas-vlg):not(.appear--no-backdrop) > [data-appear-handler]:checked) {
+  html:has(:where(.appear--offcanvas, .appear--offcanvas-vsm, .appear--offcanvas-vmd, .appear--offcanvas-vlg):not(.appear--no-backdrop) > [data-appear-handler]:checked, 
+    .appear:where([data-appear-active]):not(.appear--no-backdrop)) {
     overflow: hidden;
   }
 
@@ -2698,6 +2775,7 @@ Sizes
       border-width: var(--accordion--borders-width, 1px 1px 1px 1px);
     }
 
+    &:where([data-accordion-active]),
     &:has(> .accordion__header [data-accordion-select-handler]:checked) {
         flex: 1 1 100%;
         
@@ -2708,7 +2786,8 @@ Sizes
     }
 
     &:has(> .accordion__header [type="checkbox"]) {
-        transition: flex-grow 350ms ease-in-out,  flex-basis 350ms ease-in-out; /*for smooth animation*/
+      /*for smooth animation*/
+      transition: flex-grow 350ms ease-in-out,  flex-basis 350ms ease-in-out;
     }
   }
 
@@ -4128,7 +4207,7 @@ Sizes
         }
       }
 
-      :where(&).navbar--compact-expand,
+      :where(&)[data-navbar-active],
       &:has([data-toggle-navbar-handler]:checked) {
         > .nav {
           display: block;
@@ -4163,7 +4242,7 @@ Sizes
       transition: visibility 350ms ease-in-out;
 
       .appear__content {
-        background: var(--appear--offcanvas__-appear__content--background, var(--bg-color));
+        background: var(--appear--vmd-offcanvas__-appear__content--background, var(--appear--offcanvas__-appear__content--background, var(--bg-color)));
 
         min-height: 50px;
         height: auto;
@@ -4179,6 +4258,7 @@ Sizes
         transition: translate 350ms ease-in-out;
       }
 
+      &:where([data-appear-active]),
       &:has(> [data-appear-handler]:checked) {
         visibility: visible;
 
@@ -4305,7 +4385,7 @@ Sizes
         }
       }
 
-      :where(&).navbar--compact-expand,
+      :where(&)[data-navbar-active],
       &:has([data-toggle-navbar-handler]:checked) {
         > .nav {
           display: block;
@@ -4340,7 +4420,7 @@ Sizes
       transition: visibility 350ms ease-in-out;
 
       .appear__content {
-        background: var(--appear--offcanvas__-appear__content--background, var(--bg-color));
+        background: var(--appear--vsm-offcanvas__-appear__content--background, var(--appear--offcanvas__-appear__content--background, var(--bg-color)));
 
         min-height: 50px;
         height: auto;
@@ -4356,6 +4436,7 @@ Sizes
         transition: translate 350ms ease-in-out;
       }
 
+      &:where([data-appear-active]),
       &:has(> [data-appear-handler]:checked) {
         visibility: visible;
 

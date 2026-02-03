@@ -2512,11 +2512,14 @@
   .header-3,
   .header-4,
   .header-5,
-  .header-6 {
+  .header-6,
+  .header-7 {
     font: var(--h--font-weight) 4rem / var(--h--line-height) var(--h--font-family);
     
     letter-spacing: var(--h--letter-spacing);
     color: var(--h--color);
+    
+    dsiplay: block;
     
     margin: 2.5rem 0 1.25rem;
   }

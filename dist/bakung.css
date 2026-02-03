@@ -592,9 +592,13 @@
     -moz-user-select:none;
     user-select:none;
     vertical-align:middle;
+    :where(&:hover,&:focus):not(:disabled){
+      filter:brightness(103%);
+    }
 
     :where(&:active):not(:disabled){
       box-shadow:none;
+      filter:brightness(105%);
       transform:translateY(1px);
     }
 
@@ -851,6 +855,11 @@
 }
 
 @layer ui{
+  a{
+    :where(&.ignore-visited):visited{
+        color:currentColor;
+    }
+  }
   .avatar{
     background:var(--bg-color-text);
 
@@ -1104,17 +1113,6 @@
       translate:0 .125em;
     }
   }
-
-  .btn--accent,.btn--caution,.btn--critical,.btn--danger,.btn--error,.btn--important,.btn--info,.btn--low,.btn--normal,.btn--success,.btn--warning{
-    &:not(:disabled):focus,&:not(:disabled):hover{
-      filter:brightness(105%);
-    }
-
-    &:not(:disabled):active{
-      filter:brightness(110%);
-    }
-  }
-
   .btn--accent{
     background:var(--accent-color);
     border-color:var(--accent-color);
@@ -2792,34 +2790,17 @@
   .panel{
     display:flex;
     flex-flow:column nowrap;
-    gap:1rem;
-    padding:1rem;
+    
+    gap:.5rem;
   }
-
-  .panel__header{
+  
+  .panel,.panel__body,.panel__header{
+    padding:.5rem;
   }
   
   .panel__body{
-    
-    align-items:center;
-    display:flex;
-    flex-flow:column nowrap;
-    gap:1rem;
 
     overflow:auto;
-    padding:0 .5rem;
-
-    &>*{
-      inset:auto;
-
-      margin:unset;
-
-      max-height:40vh;
-      position:relative;
-
-      transform:none;
-      width:auto;
-    }
   }
     
   :where(.panel__header,.panel__body)>*{
@@ -4582,7 +4563,7 @@
       z-index:var(--z-index-offcanvas);
 
       .appear__content{
-        background:var(--appear--offcanvas__-appear__content--background, var(--bg-color));
+        background:var(--appear--vmd-offcanvas__-appear__content--background, var(--appear--offcanvas__-appear__content--background, var(--bg-color)));
 
         box-shadow:var(--shadow-float);
         height:auto;
@@ -4748,7 +4729,7 @@
       z-index:var(--z-index-offcanvas);
 
       .appear__content{
-        background:var(--appear--offcanvas__-appear__content--background, var(--bg-color));
+        background:var(--appear--vsm-offcanvas__-appear__content--background, var(--appear--offcanvas__-appear__content--background, var(--bg-color)));
 
         box-shadow:var(--shadow-float);
         height:auto;
@@ -7490,11 +7471,13 @@
   .z-index--tooltip{
     z-index:var(--z-index-tooltip);
   }
-  .header-1,.header-2,.header-3,.header-4,.header-5,.header-6{
+  .header-1,.header-2,.header-3,.header-4,.header-5,.header-6,.header-7{
     color:var(--h--color);
     font:var(--h--font-weight) 4rem / var(--h--line-height) var(--h--font-family);
     
     letter-spacing:var(--h--letter-spacing);
+    
+    dsiplay:block;
     
     margin:2.5rem 0 1.25rem;
   }

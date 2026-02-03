@@ -34,6 +34,7 @@
 
 *************************/
 @layer ui {
+  
   /*
   ## Visual component & Visual helpers
   */
@@ -304,7 +305,7 @@
 
   /**************** Visual aside & visual indicator ****************/
   .visual-aside {
-    font-size: calc(var(--visual-aside--font-size, 1rem) * var(--visual-aside-size));
+    font-size: calc(var(--visual-aside--font-size, 1em) * var(--visual-aside-size));
 
     height: var(--indicator-dimension);
     width: var(--indicator-dimension);
@@ -314,7 +315,7 @@
   }
 
   .visual-indicator {
-    font-size: calc(var(--visual-indicator--font-size, 1rem) * var(--visual-indicator-size));
+    font-size: calc(var(--visual-indicator--font-size, 1em) * var(--visual-indicator-size));
 
     height: var(--indicator-dimension);
     width: var(--indicator-dimension);

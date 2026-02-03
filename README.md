@@ -4,6 +4,8 @@
 
 Bakung.css has zero config customization, easy to tweak without needing to know SASS/SCSS or even touch the original CSS file. We achieve this by leveraging CSS variables.
 
+Although this is a pure-CSS framework with no built-in JavaScript, we provide dedicated CSS attributes that you can leverage to integrate your own custom scripts.
+
 Our versioning is based on the year and month. Version 26.1.0 was launched in January 2026; all future releases, including minor updates, will follow this `year/month` format, for ex. `27.3.0` is release in March 2027.
 
 
