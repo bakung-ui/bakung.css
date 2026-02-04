@@ -1892,7 +1892,7 @@ Sizes
       display 350ms allow-discrete;
 
     /* End fade in; start fade out. */
-    &[data-notify-open] {
+    &[data-notify-active] {
       display: flex;
       opacity: 1;
       transform: translate(-50%, 0) scale(1);
