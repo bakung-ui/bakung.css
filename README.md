@@ -1,8 +1,12 @@
 # bakung.css
 
-> HTML UI library pure CSS, lightweight, no javascript
+> A lightweight, zero-JS composable HTML-UI library designed for those who build on desktop and aim for mobile.
 
-Bakung.css versioning is based on the year and month. Version 26.1.0 was launched in January 2026; all future releases, including minor updates, will follow this `year/month` format, for ex. `27.3.0` is release in March 2027.
+Bakung.css has zero config customization, easy to tweak without needing to know SASS/SCSS or even touch the original CSS file. We achieve this by leveraging CSS variables.
+
+Although this is a pure-CSS framework with no built-in JavaScript, we provide dedicated CSS attributes that you can leverage to integrate your own custom scripts.
+
+Our versioning is based on the year and month. Version 26.1.0 was launched in January 2026; all future releases, including minor updates, will follow this `year/month` format, for ex. `27.3.0` is release in March 2027.
 
 
 **INSTALL**
@@ -34,17 +38,17 @@ https://cdn.jsdelivr.net/npm/@bakung-ui/bakung.css@latest/
 ```html
 <!DOCTYPE html>
 <html lang="">
-    <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&family=Montserrat:wght@100..900&family=Sometype+Mono:wght@400..700&display=swap" rel="stylesheet">
-        
-        <!--
-            Put your css files link here
-        -->
-    </head>
-    <body>
-    </body>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&family=Montserrat:wght@100..900&family=Sometype+Mono:wght@400..700&display=swap" rel="stylesheet">
+    
+    <!--
+      Put your css files link here
+    -->
+  </head>
+  <body>
+  </body>
 </html>
 ```
 
@@ -53,18 +57,26 @@ https://cdn.jsdelivr.net/npm/@bakung-ui/bakung.css@latest/
 
 ```
 [MAIN FOLDER]
- ├  css                     // Files in here are editable
- |    ├  _variables.css     // Especially this one
- |    └  _bakung.css        // You can also edit this, though only to a limited extent
- └  dist                    
-      ├  _bakung.min.css    // without variables
-      ├  bakung.css
-      └  bakung.min.css     // you shall use this for production
+  ├ css                           // Files in here are editable
+  | ├ _helpers.css                // You can edit, though only to a limited extent
+  | ├ _styles.css                 // You can edit, though only to a limited extent
+  | ├ _utilities.css              
+  | ├ _variables.css              
+  | └ index.css                   // Entry file to merge css files
+  └ dist
+    ├ bakung-lite-utils.min.css         // Included _utilities.css
+    ├ bakung-lite-utils.static.min.css  // Without variables
+    ├ bakung-lite-vars.min.css          // Included _variables.css
+    ├ bakung-lite.min.css               // Without _utilities.css & _variables.css
+    ├ bakung-lite.static.min.css        // Without variables
+    ├ bakung.css                        
+    ├ bakung.min.css                    // You shall use this for production
+    └ bakung.min.static.css             // Without variables
 ```
 
 Feel free to customize files in the css folder especially _variables.css file.
 
-To customize the styles to your preference, make sure `@bakung-ui/minimax.css` is installed , then you can either modify the minimax.css files directly or apply overrides within _variables.css and _bakung.css file.
+To customize the styles to your preference, make sure `@bakung-ui/minimax.css` is installed , then you can either modify the minimax.css files directly or apply overrides within _variables.css and _styles.css file.
 
 After making changes, run command `npm run build` to build your changes, check your new build files in dist folder.
 
@@ -82,6 +94,11 @@ When changing the `font-family` in your CSS, ensure you also update the correspo
 
 Please read the [contribution guidelines](CONTRIBUTING.md) in order to make the
 contribution process easy and effective for everyone involved.
+
+
+## Plugin guideline
+
+If you intend to create repositories or distribution packages related to bakung.css, please follow the bakung-ui guidelines to ensure discoverability and ease of use for the community, [See the guideline](CONTRIBUTING.md#plugin-guidelines).
 
 
 ## 

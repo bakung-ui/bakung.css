@@ -1,28 +1,33 @@
-/*----------------------
-  #VARIABLES
-  
-  - Colors
-  - Set up new variables and overrides for minimax.css
-  - Indicator & Visual
-  - Z-index
-  - Dimension variations
-  
-----------------------*/
+/*************************
+######################
+>>> TABLE OF CONTENTS:
+######################
+## Import variables
 
-/* 
- * // Import the entire package's main file (if defined in package.json style/main fields)
- * @import "my-npm-package";
- *
- * // Import a specific file from the package
- * @import "my-npm-package/path/to/specific/file.css";
- * 
- * Comment out this line if you want to rewrite all variables in @bakung-ui/minimax.css/css/_variables.css
- * or in development when you manually link the file in HTML <head>.
- */
+## Colors
+
+## Overrides variables for @bakung-ui/minimax.css/css/_variables.css
+
+## Components
+
+## Spaces
+
+## Z-index
+  
+*************************/
+
+/*
+## Import variables
+*/
+
+/* INFO: Comment out this line during development if you are manually linking the file in the HTML <head>. */
 @import "@bakung-ui/minimax.css/css/_variables.css";
 
 :root {
   /**************** Colors ****************/
+  /*
+  ## Colors
+  */
   /*
    * #7374BD oklch(0.59 0.11 281.88)
    * #67AC36 oklch(0.67 0.17 134.85)
@@ -47,14 +52,13 @@
    * Danger     
    */
   --color-base-white: white;
-  /*TODO Baiki color-base 1 s/d 9, terkecuali 5*/
   --color-base-1: oklch(0.99 0 0);
-  --color-base-2: ;
+  --color-base-2: oklch(0.99 0 0);
   --color-base-5: oklch(0.98 0 0);
-  --color-base-6: oklch(0.96 0.02 285.26); /* oklch(0.93 0 0) */
-  --color-base-7: oklch(0.93 0.02 285.26); /* oklch(0.85 0 0) */
-  --color-base-8: oklch(0.9 0.02 285.26); /* oklch(0.8 0.01 198.21) */
-  --color-base-9: oklch(0.87 0.02 285.26); /* oklch(0.76 0.01 198.22) */
+  --color-base-6: oklch(0.96 0.02 285.26);
+  --color-base-7: oklch(0.93 0.02 285.26);
+  --color-base-8: oklch(0.9 0.02 285.26);
+  --color-base-9: oklch(0.87 0.02 285.26);
   --color-base-10: oklch(0.77 0.02 285.26);
   --color-base-20: oklch(0.67 0.02 285.26);
   --color-base-30: oklch(0.57 0.02 285.26);
@@ -177,14 +181,26 @@
   --color-danger-80: oklch(0.54 0.21 16.44);
   --color-danger-90: oklch(0.22 0.23 17.23);
   
-  
-  /**************** Set up new variables and overrides for minimax.css ****************/
+  /*
+  ## Overrides variables for @bakung-ui/minimax.css/css/_variables.css
+  */
   --bg-color-off: oklch(0.9 0.02 285.26);
   --bg-color-active: oklch(0.97 0.01 285.51);
   
   /* .dialog, .popper */
   --border-color-light: oklch(0.9 0.02 285.18);
   
+  --popper--background: var(--bg-color-alt-1);
+  --divider--background: var(--bg-color-alt-1);
+  --navbar--background: var(--bg-color-alt-1);
+  --nav--background: var(--bg-color-alt-1);
+  --nav__-nav--background: var(--bg-color-alt-1);
+  --dialog--background: var(--bg-color-alt-1);
+  --card--background: var(--bg-color-alt-1);
+  --accordions-background: var(--bg-color-alt-1);
+  --tab__nav_-checked--background: var(--bg-color-alt-1);
+  --tabs__content--background: var(--bg-color-alt-1);
+  --appear--offcanvas__-appear__content--background: var(--bg-color-alt-1);
   /*
    --shadow-float: dialog, [popover], .appear--offcanvas, .notice--notify
    --shadow-float-alt-1: .popper, .navbar > .nav > .nav__item > .nav
@@ -196,24 +212,44 @@
   
   --as-btn--paddings: .21lh 1em .26lh;
   --as-btn--paddings: .2lh .75lh .25lh;
-  
-  /************ Indicator & Visual ************/
-  --indicator-dimension: 1em;
 
-  /************ SPACES ************/
-   --space-distance-1: 1rem;
-   --space-distance-2: 1.25rem;
-   --space-distance-3: 1.5rem;
-   --space-distance-4: 1.75rem;
-   --space-distance-5: 2rem;
-   
-   --space-group-1: .125rem;
-   --space-group-2: .25rem;
-   --space-group-3: .5rem;
-   --space-group-4: .75rem;
-   --space-group-5: 1rem;
+  /*
+  ## Components
+  */
+  --breadcrumb-divider: attr(be-breadcrumb-divider, '/');
+  --appear-size: 300px;
+  --accordions--height: 290px;
+  --cards--slide--height: auto;
+  --slide-prev-nav: attr(be-prev-nav, '<');
+  --slide-next-nav: attr(be-next-nav, '>');
+
+  /*
+  ## Spaces
+  */
+  --avatar-size: 1;
+  --badge-size: 1;
+  --btn-size: 1;
+  --toggle-size: 1;
+  --popper-space: 1;
+  --indicator-dimension: 1em;
+  --visual-aside-size: 1;
+  --visual-indicator-size: 1;
   
-  /**************** Z-index ****************/
+  --space-distance-1: 1rem;
+  --space-distance-2: 1.25rem;
+  --space-distance-3: 1.5rem;
+  --space-distance-4: 1.75rem;
+  --space-distance-5: 2rem;
+  
+  --space-group-1: .125rem;
+  --space-group-2: .25rem;
+  --space-group-3: .5rem;
+  --space-group-4: .75rem;
+  --space-group-5: 1rem;
+  
+  /*
+  ## Z-index
+  */
   --z-index-layover: 900;
   --z-index-dropdown: 1000;
   --z-index-sticky: 1020;
@@ -224,13 +260,17 @@
   --z-index-modal: 1055;
   --z-index-popover: 1070;
   --z-index-tooltip: 1080;
-
-  /**************** Dimension variations ****************/
-  --avatar-size: 1;
-  --badge-size: 1;
-  --btn-size: 1;
-  --toggle-size: 1;
-  --popover-space: 1;
-  --visual-aside-size: 1;
-  --visual-indicator-size: 1;
+  
 } /*end of :root*/
+
+
+
+
+
+
+
+
+
+
+
+
