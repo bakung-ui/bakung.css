@@ -30,7 +30,7 @@ Sizes
     * Image (+ Picture)
     * Video
     
-//TODO: Change this to flex so that the popover menu can open from right to left when it's stacked vertically.
+//TODO: Make popover menu can open from right to left when it's stacked vertically. (Try, change flex to grid)
 ### Navbar
     └ Breadcrumb
 ### Steps
@@ -51,7 +51,7 @@ Sizes
 ### Cards
   ├ Scrollable
   └ Slide
-//TODO: slide__item-description Set a maximum height to prevent the element from expanding indefinitely when the text content is long
+//TODO: slide__item.card card__body Set a maximum height to prevent the element from expanding indefinitely when the text content is long
 ### Slide (Carousel)
     // └ Gallery // desain lain carousel ❗
 
@@ -109,8 +109,8 @@ Sizes
   ### Avatar
   */
   .avatar {
-    font: 300 calc(var(--avatar--font-size, .75rem) * var(--avatar-size)) var(--font-family);
-    background: var(--bg-color-text);
+    font: 300 var(--avatar--font-size, .75rem) var(--font-family);
+    background: var(--background-color-text);
 
     border-radius: .125em;
 
@@ -163,7 +163,7 @@ Sizes
   }
 
   .avatar__indicator {
-    background: var(--bg-color-off);
+    background: var(--background-color-off);
 
     border-radius: 50%;
     box-shadow: 0 0 0 1px var(--color-base-5);
@@ -196,14 +196,14 @@ Sizes
   .badge {
       user-select: none;
       
-    font: normal normal calc(var(--badge--font-size, .9rem) * var(--badge-size)) / 1 var(--font-family);
+    font: normal normal var(--badge--font-size, .9rem) / 1 var(--font-family);
 
-    color: var(--badge--color, var(--color-base-50));
-    background: var(--badge--bg-color, var(--bg-color-text));
+    color: var(--badge--color);
+    background: var(--badge--background);
 
-    border: 0 var(--badge--border-style, solid) var(--badge--border-color, var(--border-color-boundary));
-      border-width: var(--badge--borders-width, 1px);
-    border-radius: var(--badge--borders-radius, 1rem);
+    border: 0 var(--badge--border-style, solid) var(--badge--border-color);
+      border-width: var(--badge--border-width, 1px);
+    border-radius: var(--badge--border-radius, 1rem);
 
     white-space: nowrap;
     
@@ -281,7 +281,7 @@ Sizes
 
   /**************** Chip ****************/
   .badge--chip {
-    background: var(--bg-color);
+    background: var(--background-color);
     
     border: 1px solid currentColor;
     border-radius: .25rem;
@@ -342,17 +342,17 @@ Sizes
   ### Button
   */
   .btn {
-    font-size: calc(var(--btn--font-size) * var(--btn-size));
+    font-size: var(--btn--font-size);
 
     transition: color 500ms ease-out, background 500ms ease-out, border 500ms ease-out;
   }
 
   .btn:not(:where(button, [type="button"], [type="reset"], [type="submit"])) {
-    padding: var(--as-btn--paddings);
+    padding: var(--as-btn--padding);
   }
 
   .btn--icon {
-    --btn--font-size: var(--btn--icon-font-size, 1em);
+    font-size: var(--btn--icon-font-size);
     background: none;
     border: none;
     border-radius: 50%;
@@ -378,19 +378,7 @@ Sizes
       translate: 0 .125em;
     }
   }
-  /*
-   * INFO:  TEST
-  .btn--accent, .btn--low, .btn--normal, .btn--important, .btn--critical, .btn--success, .btn--info, .btn--caution, .btn--warning, .btn--error, .btn--danger {
-    &:not(:disabled):focus,
-    &:not(:disabled):hover {
-      filter: brightness(105%);
-    }
-
-    &:not(:disabled):active {
-      filter: brightness(110%);
-    }
-  }
-  */
+  
   .btn--accent {
     color: white;
     background: var(--accent-color);
@@ -656,8 +644,9 @@ Sizes
 
     /* path */
     &::before {
-      background: var(--bg-color-off);
-      border: var(--controls--border);
+      background: var(--background-color-off);
+      border: 0 var(--controls--border-style) var(--controls--border-color);
+        border-width: var(--controls--border-width);
       border-radius: calc(1em * var(--toggle-size));
 
       height: calc(var(--toggle-path-size, .5em) * var(--toggle-size));
@@ -666,8 +655,14 @@ Sizes
     }
     
     /* indicator */
-    &:has(> .toggle__indicator)::after {
-      display: none;
+    &:has(> .toggle__indicator) {
+      &::after {
+        display: none;
+      }
+      
+      &:has([data-toggle-handler-off]:focus-visible, [data-toggle-handler-on]:focus-visible, [data-toggle-handler-off-on]:focus-visible)::before {
+          outline: var(--focus-outline);
+      }
     }
   }
   
@@ -679,9 +674,10 @@ Sizes
   }
   
   .toggle__control::after, .toggle__indicator {
-    background: var(--bg-color-clickable);
+    background: var(--background-color-clickable);
 
-    border: var(--controls--border);
+    border: 0 var(--controls--border-style) var(--controls--border-color);
+      border-width: var(--controls--border-width);
     border-radius: 50%;
     box-shadow: none;
 
@@ -740,7 +736,7 @@ Sizes
   .divider {
     align-self: stretch;
 
-    border-color: var(--border-color-boundary);
+    border-color: var(--boundary--border-color);
     margin: .75rem .5rem;
 
     position: relative;
@@ -756,7 +752,7 @@ Sizes
 
       color: var(--font-color-alt-2);
 
-      background: var(--divider--background, var(--bg-color));
+      background: var(--divider--background);
 
       position: absolute;
       inset: auto auto auto 50%;
@@ -793,9 +789,10 @@ Sizes
   }
 
   .img--thumbnail {
-    background: var(--bg-color);
-
-    border: var(--boundary--border);
+    background: var(--background-color);
+    
+    border: 0 var(--boundary--border-style) var(--boundary--border-color);
+    border-width: var(--boundary--border-width);
     border-radius: 0.375rem;
 
     height: auto;
@@ -852,7 +849,7 @@ Sizes
   ### Navbar
   */
   .navbar {
-    background: var(--navbar--background, var(--bg-color));
+    background: var(--navbar--background);
     display: flex;
     flex-flow: row wrap;
 
@@ -866,58 +863,57 @@ Sizes
       filter: var(--shadow-float-alt-1);
     }
 
-    .navbar__toggle,
-    .active-visible,
-    .active-invisible {
-      border-radius: 50%;
-      display: none;
-      z-index: 1;
-    }
-
-    /* .navbar--*compact */
-    &:where([data-navbar-active]),
-    &:has([data-toggle-navbar-handler]:checked) {
-      .active-invisible {
+    /*# .navbar--*compact #*/
+    &:where([data-navbar-active]) {
+      &:is([data-navbar-active="true" i]) .active-invisible {
         display: none;
       }
-
-      .active-visible {
-        display: block;
+      
+      &:not([data-navbar-active="true" i]) .active-visible {
+        display: none;
       }
+    }
+    
+    &:has([data-toggle-navbar-handler]:checked) .active-invisible {
+      display: none;
+    }
+    
+    &:has([data-toggle-navbar-handler]:not(:checked)) .active-visible {
+      display: none;
     }
   }
 
   .navbar__brand {
+    position: relative;
     display: inline-block;
+    padding: .5rem 1rem;
   }
 
   .navbar__toggle {
-    cursor: pointer;
-
-    padding: .5rem;
-
-    box-shadow: none;
-
+    position: absolute;
+    opacity: 0;
+    overflow: clip;
+    visibility: hidden;
+    
     &:is(:focus, :focus-within) {
       outline: var(--focus-outline);
     }
   }
 
   .nav {
-    background: var(--nav--background, var(--bg-color));
+    background: var(--nav--background, inherit);
 
     width: max-content;
 
     display: inline-flex;
     flex-flow: row wrap;
-
-    margin: 0;
+    
     padding: 0;
 
     list-style: none;
 
     .nav {
-      /* background: var(--nav--background, var(--bg-color)); */
+      background: var(--nav__nav--background);
 
       position: absolute;
       inset: 100% auto auto 0;
@@ -942,7 +938,7 @@ Sizes
 
   .nav__item-line::before {
     content: "";
-    border: var(--boundary--border);
+    border: 0 var(--boundary--border-style) var(--boundary--border-color);
     border-width: 0 0 1px;
     height: 0;
 
@@ -971,7 +967,7 @@ Sizes
     }
 
     &:hover {
-      background-color: var(--bg-color-active);
+      background: var(--background-color-active);
       
       & > a::after {
         transform: scaleY(-1);
@@ -1027,9 +1023,12 @@ Sizes
   .navbar--compact {
     justify-content: space-between;
 
-    .navbar__toggle,
-    .active-invisible {
-      display: block;
+    :where(.navbar__toggle) {
+      position: static;
+
+      opacity: 1;
+      overflow: initial;
+      visibility: visible;
     }
 
     > .nav {
@@ -1086,7 +1085,7 @@ Sizes
       }
     }
 
-    :where(&)[data-navbar-active],
+    :where(&)[data-navbar-active="true" i],
     &:has([data-toggle-navbar-handler]:checked) {
       > .nav {
         display: block;
@@ -1104,18 +1103,34 @@ Sizes
   
   /**************** Breadcrumb ****************/
   .navbar--breadcrumb {
+    /* INFO: Dont delete or move */
+    --breadcrumb-divider: attr(be-breadcrumb-divider, '/');
+    
+    background: var(--navbar--breadcrumb--background, unset);
+    
+    gap: var(--navbar--breadcrumb-gap, 0 1.5rem);
+    
+    .navbar__brand {
+      padding: 0;
+    }
+    
+    > .nav {
+      background: unset;
+      
+      gap: var(--navbar--breadcrumb-gap, 0 1.5rem);
+    }
+    
     .navbar__brand::after,
     > .nav > .nav__item:not(:last-child)::after {
       content: var(--breadcrumb-divider);
 
       color: var(--font-color-alt-2);
-
-      margin: 0 .5em;
+      position: absolute;
+      right: -1rem;
     }
 
     > .nav > .nav__item {
       padding: 0;
-
       &:hover {
         background: inherit;
       }
@@ -1160,7 +1175,7 @@ Sizes
     &::before,
     &::after {
       content: "";
-      background: var(--bg-color-off);
+      background: var(--background-color-off);
 
       position: absolute;
 
@@ -1175,10 +1190,10 @@ Sizes
   }
 
   .step__indicator {
-    background: var(--bg-color-off);
+    background: var(--background-color-off);
 
-    border: 0 var(--step__indicator--border-style, solid) var(--step__indicator--border-color, var(--bg-color));
-      border-width: var(--step__indicator--borders-width, 0);
+    border: 0 var(--step__indicator--border-style, solid) var(--step__indicator--border-color);
+      border-width: var(--step__indicator--border-width, 0);
     border-radius: 50%;
     
     min-height: .5rem;
@@ -1205,7 +1220,7 @@ Sizes
   }
   
   .step__body {
-    color: var(--step__body--color, var(--font-color-alt-2));
+    color: var(--step__body--color);
     padding: .5rem;
   }
 
@@ -1259,10 +1274,10 @@ Sizes
     }
     
     .step__indicator {
-      background: var(--bg-color);
+      background: var(--background-color);
 
-      border: 0 var(--step--active__-step__indicator--border-style, solid) var(--accent-color);
-      border-width: var(--step--active__-step__indicator--border-width, .125rem);
+      border: 0 var(--step--active_-step__indicator--border-style, solid) var(--accent-color);
+      border-width: var(--step--active_-step__indicator--border-width, .125rem);
 
       min-height: .75rem;
       min-width: .75rem;
@@ -1280,7 +1295,6 @@ Sizes
       }
     }
     
-    /* .step__indicator:not(:has(.visual-aside, .visual-indicator)) { */
     .step__indicator {
       background: var(--accent-color);
 
@@ -1304,7 +1318,7 @@ Sizes
   }
 
   .tabs__nav {
-    border: 0 var(--tabs__nav--border-style, solid)  var(--tabs__nav--border-color, var(--border-color-boundary));
+    border: 0 var(--tabs__nav--border-style, solid)  var(--tabs__nav--border-color);
       border-width: 0;
     display: flex;
   }
@@ -1312,9 +1326,9 @@ Sizes
   .tab__nav {
     cursor: pointer;
 
-    background: var(--bg-color-clickable);
+    background: var(--background-color-clickable);
 
-    border: var(--boundary--border);
+    border: 0 var(--boundary--border-style) var(--boundary--border-color);
     border-width: 1px 1px 0;
     border-radius: .125rem .125rem 0 0;
 
@@ -1334,17 +1348,17 @@ Sizes
     }
   }
 
-  .tab__nav[data-tab-active],
+  .tab__nav[data-tab-active="true" i],
   .tab__nav:has([data-tab-select-handler]:checked) {
-    background: var(--tab__nav_-checked--background, var(--bg-color));
+    background: var(--tab__nav--active--background);
 
     z-index:  100;
   }
 
   .tabs__content {
-    background: var(--tabs__content--background, var(--bg-color));
+    background: var(--tabs__content--background);
 
-    border: var(--boundary--border);
+    border: 0 var(--boundary--border-style) var(--boundary--border-color);
       border-width: 1px;
 
     position: relative;
@@ -1356,12 +1370,12 @@ Sizes
   }
 
   .tab__content {
-    border: 0 solid var(--border-color-boundary);
+    border: 0 solid var(--boundary--border-color);
 
     display: none;
   }
 
-  .tab__content[data-tab-active],
+  .tab__content[data-tab-active="true" i],
   .tabs:has(.tab__nav:nth-child(1) [data-tab-select-handler]:checked)
     .tab__content:nth-child(1),
   .tabs:has(.tab__nav:nth-child(2) [data-tab-select-handler]:checked)
@@ -1476,7 +1490,7 @@ Sizes
 
       border-left: .4rem solid transparent;
       border-right: .4rem solid transparent;
-      border-bottom: .4rem solid var(--bg-color-text);
+      border-bottom: .4rem solid var(--background-color-text);
 
       position: absolute;
       inset: 0 auto auto 50%;
@@ -1490,7 +1504,7 @@ Sizes
       transition: opacity 200ms ease-in-out, inset 200ms ease-in-out;
     }
 
-    &:is([data-tooltip-active])::before,
+    &:is([data-tooltip-active="true" i])::before,
     &:is(.tooltip--focus):focus::before,
     &:hover::before {
       inset: -.5rem auto auto 50%;
@@ -1504,7 +1518,7 @@ Sizes
       font-size: .7rem;
       color: revert-layer;
 
-      background: var(--bg-color-text);
+      background: var(--background-color-text);
 
       border-radius: .125rem;
 
@@ -1529,7 +1543,7 @@ Sizes
       transition: opacity 200ms ease-in-out, inset 200ms ease-in-out;
     }
 
-    &:is([data-tooltip-active])::after,
+    &:is([data-tooltip-active="true" i])::after,
     &:is(.tooltip--focus):focus::after,
     &:hover::after {
       inset: auto auto calc(100% + .5rem) 50%;
@@ -1549,7 +1563,7 @@ Sizes
       translate: 0 -50%;
     }
     
-    &:is([data-tooltip-active])::before,
+    &:is([data-tooltip-active="true" i])::before,
     &:is(.tooltip--focus):focus::before,
     &:hover::before {
       inset: 50% auto auto 100%;
@@ -1561,7 +1575,7 @@ Sizes
       transform: translateY(-50%);
     }
 
-    &:is([data-tooltip-active])::after,
+    &:is([data-tooltip-active="true" i])::after,
     &:is(.tooltip--focus):focus::after,
     &:hover::after {
       inset: 50% auto auto calc(100% + .55rem);
@@ -1574,7 +1588,7 @@ Sizes
       transform: rotate(0deg) translateX(-50%);
     }
 
-    &:is([data-tooltip-active])::before,
+    &:is([data-tooltip-active="true" i])::before,
     &:is(.tooltip--focus):focus::before,
     &:hover::before {
       inset: auto auto -.5rem 50%;
@@ -1586,7 +1600,7 @@ Sizes
       transform: translateX(-50%);
     }
 
-    &:is([data-tooltip-active])::after,
+    &:is([data-tooltip-active="true" i])::after,
     &:is(.tooltip--focus):focus::after,
     &:hover::after {
       inset: calc(100% + .5rem) auto auto 50%;
@@ -1600,7 +1614,7 @@ Sizes
       translate: 0 -50%;
     }
 
-    &:is([data-tooltip-active])::before,
+    &:is([data-tooltip-active="true" i])::before,
     &:is(.tooltip--focus):focus::before,
     &:hover::before {
       inset: 50% 100% auto auto;
@@ -1611,7 +1625,7 @@ Sizes
       transform: translateY(-50%);
     }
     
-    &:is([data-tooltip-active])::after,
+    &:is([data-tooltip-active="true" i])::after,
     &:is(.tooltip--focus):focus::after,
     &:hover::after {
       inset: 50% calc(100% + .55rem) auto auto;
@@ -1644,14 +1658,6 @@ Sizes
   ### Dialog
   */
   .dialog {
-    color: var(--dialog--font-color, revert-layer);
-
-    background: var(--dialog--background, var(--bg-color));
-
-    border: 0 var(--dialog--border-style, solid)  var(--dialog--border-color, var(--border-color-light));
-      border-width: var(--dialog--borders-width, 1px);
-    border-radius: .125rem;
-
     display: grid;
     gap: .5rem 0;
     grid: "top-start top-middle top-end" auto
@@ -1711,13 +1717,13 @@ Sizes
   ### Notice (info)
   */
   .notice {
-    color: var(--notice--font-color, revert-layer);
+    color: var(--notice--color, revert-layer);
     
-    background: var(--notice--bg-color, var(--bg-color));
+    background: var(--notice--background-color);
     
-    border: 0 var(--notice--border-style, solid) var(--notice--border-color, var(--border-color-boundary));
-      border-width: var(--notice--borders-width, 1px);
-    border-radius: var(--notice--borders-radius, .125rem);
+    border: 0 var(--notice--border-style, solid) var(--notice--border-color);
+      border-width: var(--notice--border-width, 1px);
+    border-radius: var(--notice--border-radius, .125rem);
     
     box-shadow: var(--notice--box-shadow, );
     
@@ -1755,7 +1761,7 @@ Sizes
   }
 
   .notice--accent {
-    background-color: var(--accent-color);
+    background: var(--accent-color);
     border-color: var(--accent-color);
     color: white;
     
@@ -1765,7 +1771,7 @@ Sizes
   }
 
   .notice--low {
-    background-color: var(--color-low-10);
+    background: var(--color-low-10);
     border-color: var(--color-low-20);
     
     .notice__aside {
@@ -1774,7 +1780,7 @@ Sizes
   }
 
   .notice--normal {
-    background-color: var(--color-normal-10);
+    background: var(--color-normal-10);
     border-color: var(--color-normal-20);
     
     .notice__aside {
@@ -1783,7 +1789,7 @@ Sizes
   }
 
   .notice--important {
-    background-color: var(--color-important-10);
+    background: var(--color-important-10);
     border-color: var(--color-important-20);
     
     .notice__aside {
@@ -1792,7 +1798,7 @@ Sizes
   }
 
   .notice--critical {
-    background-color: var(--color-critical-10);
+    background: var(--color-critical-10);
     border-color: var(--color-critical-20);
     
     .notice__aside {
@@ -1801,7 +1807,7 @@ Sizes
   }
 
   .notice--success {
-    background-color: var(--color-success-10);
+    background: var(--color-success-10);
     border-color: var(--color-success-20);
     
     .notice__aside {
@@ -1810,7 +1816,7 @@ Sizes
   }
 
   .notice--info {
-    background-color: var(--color-info-10);
+    background: var(--color-info-10);
     border-color: var(--color-info-20);
     
     .notice__aside {
@@ -1819,7 +1825,7 @@ Sizes
   }
 
   .notice--caution {
-    background-color: var(--color-caution-10);
+    background: var(--color-caution-10);
     border-color: var(--color-caution-20);
     
     .notice__aside {
@@ -1828,7 +1834,7 @@ Sizes
   }
 
   .notice--warning {
-    background-color: var(--color-warning-10);
+    background: var(--color-warning-10);
     border-color: var(--color-warning-20);
     
     .notice__aside {
@@ -1837,7 +1843,7 @@ Sizes
   }
 
   .notice--error {
-    background-color: var(--color-error-10);
+    background: var(--color-error-10);
     border-color: var(--color-error-20);
     
     .notice__aside {
@@ -1846,7 +1852,7 @@ Sizes
   }
 
   .notice--danger {
-    background-color: var(--color-danger-10);
+    background: var(--color-danger-10);
     border-color: var(--color-danger-20);
     
     .notice__aside {
@@ -1858,9 +1864,9 @@ Sizes
   .notice--notify {
     background: var(--color-base-5);
       
-    border: 0 var(--notice--notify--border-style, solid) var(--notice--border-color, var(--border-color-boundary));
-      border-width: var(--notice--notify--borders-width, 0);
-    border-radius: var(--notice--notify--borders-radius, .125rem);
+    border: 0 var(--notice--notify--border-style, solid) var(--notice--border-color);
+      border-width: var(--notice--notify--border-width, 0);
+    border-radius: var(--notice--notify--border-radius, .125rem);
     
     box-shadow: var(--shadow-float);
     
@@ -1980,11 +1986,11 @@ Sizes
   }
 
   .popper {
-    background: var(--popper--background, var(--bg-color));
+    background: var(--popper--background);
 
-    border: 0 var(--popper--border-style, solid)  var(--popper--border-color, var(--border-color-light));
-      border-width: var(--popper--borders-width, 1px);
-    border-radius: var(--popper--borders-radius, .125rem);
+    border: 0 var(--popper--border-style, solid)  var(--popper--border-color);
+      border-width: var(--popper--border-width, 1px);
+    border-radius: var(--popper--border-radius, .125rem);
 
     position: absolute;
     inset: auto auto calc(100% + (.25rem * var(--popper-space))) 50%;
@@ -2047,7 +2053,7 @@ Sizes
     text-align: left;
     
     :where(&) {
-      background-color: inherit;
+      background: inherit;
     }
     
     &:focus {
@@ -2060,10 +2066,6 @@ Sizes
       scale: none;
     }
     
-    &:hover {
-      /* background-color: var(--bg-color-active); */
-    }
-    
     &:is(a, button, .btn):hover {
       filter: brightness(103%);
     }
@@ -2074,7 +2076,7 @@ Sizes
     
     &::before {
       content: "";
-      border: var(--boundary--border);
+      border: 0 var(--boundary--border-style) var(--boundary--border-color);
       border-width: 0 0 1px;
       height: 0;
 
@@ -2146,7 +2148,7 @@ Sizes
 
       border-left: .5rem solid transparent;
       border-right: .5rem solid transparent;
-      border-bottom: .5rem solid var(--bg-color);
+      border-bottom: .5rem solid var(--background-color);
 
       opacity: 1;
 
@@ -2239,7 +2241,7 @@ Sizes
       transform: translateX(calc(-.25rem * var(--popper-space)));
     }
 
-    &[data-popper-active],
+    &[data-popper-active="true" i],
     &:hover,
     &:focus,
     &:focus-within,
@@ -2291,30 +2293,9 @@ Sizes
   }
   
   .panel__body {
-    /*TODO: oend bermasalah sama direct element, grid, dialog*/
-    /*
-    display:flex;
-    flex-flow:column nowrap;
-    gap:1rem;
-    align-items:center;
-    padding: 0 .5rem;
-    */
     padding: .5rem;
 
     overflow: auto;
-    /*
-    & > * {
-      position: relative;
-      inset: auto;
-
-      max-height: 40vh;
-      width: auto;
-
-      margin: unset;
-
-      transform: none;
-    }
-    */
   }
     
   :where(.panel__header, .panel__body) > * {
@@ -2420,11 +2401,6 @@ Sizes
     pointer-events: initial;
     opacity: 1;
     
-    /* INFO: Testing
-     *
-     * position-anchor: var(--anchor-name, --anchor-name);
-     * inset: anchor(top) anchor(right) anchor(bottom) anchor(left);
-    */
     position: fixed;
     inset: 0;
     min-width: initial;
@@ -2452,12 +2428,11 @@ Sizes
       translate: 50% 50%;
       transform: translate(-50%, -50%);
       
-      .active-invisible {
-        display: block;
-      }
-      
       .active-visible {
-        display: none;
+        position: absolute;
+
+        opacity: 0;
+        overflow: clip;
       }
     }
   }
@@ -2468,11 +2443,10 @@ Sizes
     transform: translate(-50%, -50%) scale(1.01);
     
     .active-invisible {
-      display: none;
-    }
-    
-    .active-visible {
-      display: block;
+      position: absolute;
+
+      opacity: 0;
+      overflow: clip;
     }
   }
   
@@ -2492,7 +2466,7 @@ Sizes
 
     transition: grid 350ms ease-in-out, visibility 350ms ease-in-out;
 
-    &:where([data-appear-active]),
+    &:where([data-appear-active="true" i]),
     &:has(> :where([data-appear-handler]:checked)) {
       grid: 1fr / 100%;
     
@@ -2510,7 +2484,6 @@ Sizes
 
   .appear-aside {
       flex: 1 1 auto;
-      /* overflow:auto; */
   }
 
   .appear__overflow {
@@ -2542,7 +2515,7 @@ Sizes
       position: static;
     }
 
-    &:where([data-appear-active]),
+    &:where([data-appear-active="true" i]),
     &:has(> [data-appear-handler]:checked) {
       grid: 100% / auto 1fr;
     }
@@ -2555,7 +2528,7 @@ Sizes
       position: static;
     }
 
-    &:where([data-appear-active]),
+    &:where([data-appear-active="true" i]),
     &:has(> [data-appear-handler]:checked) {
       grid: auto 1fr / 100%;
     }
@@ -2566,7 +2539,7 @@ Sizes
     max-height: initial;
     max-width: 40vw;
 
-    &:where([data-appear-active]),
+    &:where([data-appear-active="true" i]),
     &:has(> [data-appear-handler]:checked) {
       grid: 100% / 1fr;
     }
@@ -2579,7 +2552,7 @@ Sizes
     .appear__content {
     }
 
-    &:where([data-appear-active]),
+    &:where([data-appear-active="true" i]),
     &:has(> [data-appear-handler]:checked) {
       grid: var(--appear-size) / 100%;
     }
@@ -2593,7 +2566,7 @@ Sizes
         width: var(--appear-size);
       }
 
-      &:where([data-appear-active]),
+      &:where([data-appear-active="true" i]),
       &:has(> [data-appear-handler]:checked) {
         grid: 100% / auto var(--appear-size);
       }
@@ -2602,7 +2575,7 @@ Sizes
     &:is(.appear--bottom) {
       grid: auto 0 / 100%;
 
-      &:where([data-appear-active]),
+      &:where([data-appear-active="true" i]),
       &:has(> [data-appear-handler]:checked) {
         grid: auto var(--appear-size) / 100%;
       }
@@ -2617,7 +2590,7 @@ Sizes
         width: var(--appear-size);
       }
 
-      &:where([data-appear-active]),
+      &:where([data-appear-active="true" i]),
       &:has(> [data-appear-handler]:checked) {
         grid: 100% / var(--appear-size);
       }
@@ -2628,8 +2601,8 @@ Sizes
   .appear--offcanvas {
     /* --appear-size: 300px; */
 
-    background: oklch(from var(--bg-color-text) l c h / .35);
-    backdrop-filter: blur(.25rem);
+    background: var(--backdrop--background);
+    backdrop-filter: blur(1px);
 
     max-height: initial;
     max-width: initial;
@@ -2643,7 +2616,7 @@ Sizes
     transition: visibility 350ms ease-in-out;
 
     .appear__content {
-      background: var(--appear--offcanvas__-appear__content--background, var(--bg-color));
+      background: var(--appear--offcanvas_-appear__content--background);
 
       min-height: 50px;
       height: auto;
@@ -2659,7 +2632,7 @@ Sizes
       transition: translate 350ms ease-in-out;
     }
 
-    &:where([data-appear-active]),
+    &:where([data-appear-active="true" i]),
     &:has(> [data-appear-handler]:checked) {
       visibility: visible;
 
@@ -2735,7 +2708,7 @@ Sizes
   }
 
   html:has(:where(.appear--offcanvas, .appear--offcanvas-vsm, .appear--offcanvas-vmd, .appear--offcanvas-vlg):not(.appear--no-backdrop) > [data-appear-handler]:checked, 
-    .appear:where([data-appear-active]):not(.appear--no-backdrop)) {
+    .appear:where([data-appear-active="true" i]):not(.appear--no-backdrop)) {
     overflow: hidden;
   }
 
@@ -2743,7 +2716,7 @@ Sizes
   ### Accordions
   */
   .accordions {
-    background: var(--accordions-background, var(--bg-color));
+    background: var(--accordions--background);
     border-radius: .125rem;
 
     height: var(--accordions--height);
@@ -2753,29 +2726,29 @@ Sizes
   }
 
   .accordion {
-    border: 0 var(--accordion--border-style, solid) var(--accordion--border-color, var(--border-color-boundary));
+    border: 0 var(--accordion--border-style, solid) var(--accordion--border-color);
     min-width: min-content;
     display: flex;
     flex: 0;
     transition: flex-basis 350ms ease-in-out;
 
     &:first-child {
-      border-width: var(--accordion--borders-width, 1px 0 1px 1px);
+      border-width: var(--accordion-first-child--border-width, 1px 0 1px 1px);
       border-top-left-radius: inherit;
       border-bottom-left-radius: inherit;
     }
 
     &:last-child {
-      border-width: var(--accordion--borders-width, 1px 1px 1px 0);
+      border-width: var(--accordion-last-child--border-width, 1px 1px 1px 0);
       border-top-right-radius: inherit;
       border-bottom-right-radius: inherit;
     }
 
     &:not(:first-child, :last-child) {
-      border-width: var(--accordion--borders-width, 1px 1px 1px 1px);
+      border-width: var(--accordion--border-width, 1px 1px 1px 1px);
     }
 
-    &:where([data-accordion-active]),
+    &:where([data-accordion-active="true" i]),
     &:has(> .accordion__header [data-accordion-select-handler]:checked) {
         flex: 1 1 100%;
         
@@ -2794,9 +2767,9 @@ Sizes
   .accordion__header {
     cursor: pointer;
 
-    color: var(--accordion__header--font-color, revert-layer);
-    background: var(--accordion__header--background, var(--bg-color-clickable));
-    border: 0 var(--accordion__header--border-style, solid)  var(--accordion__header--border-color, var(--border-color-boundary));
+    color: var(--accordion__header--color, revert-layer);
+    background: var(--accordion__header--background);
+    border: 0 var(--accordion__header--border-style, solid)  var(--accordion__header--border-color);
       border-width: 0 1px 0 0;
 
     position: relative;
@@ -2824,8 +2797,8 @@ Sizes
   }
 
   .accordion__body {
-    color: var(--accordion__body--font-color, revert-layer);
-    background-color: var(--accordion__body--bg-color, initial);
+    color: var(--accordion__body--color, revert-layer);
+    background: var(--accordion__body--background, initial);
     display: flex;
     flex: 1 1 100%;
   }
@@ -2843,6 +2816,7 @@ Sizes
     
     /* INFO: Dont show scrollbar till expanding stop */
     overflow: clip;
+    overscroll-behavior: contain;
     scrollbar-width: none;
     transition: scrollbar-width 1500ms allow-discrete;
   }
@@ -2857,21 +2831,21 @@ Sizes
       transition: none;
 
       &:first-child {
-        border-width: var(--accordion--borders-width, 1px 1px 0 1px);
+        border-width: var(--accordion-first-child--border-width, 1px 1px 0 1px);
         border-radius: unset;
         border-top-left-radius: inherit;
         border-bottom-left-radius: inherit;
       }
 
       &:last-child {
-        border-width: var(--accordion--borders-width, 0 1px 1px 1px);
+        border-width: var(--accordion-last-child--border-width, 0 1px 1px 1px);
         border-radius: unset;
         border-top-right-radius: inherit;
         border-bottom-right-radius: inherit;
       }
 
       &:not(:first-child, :last-child) {
-        border-width: var(--accordion--borders-width, 1px 1px 1px 1px);
+        border-width: var(--accordion--border-width, 1px 1px 1px 1px);
       }
     }
 
@@ -2918,7 +2892,7 @@ Sizes
   ### Cards
   */
   .card {
-    background: var(--card--background, var(--color-base-1));
+    background: var(--card--background);
     
     filter: var(--shadow-border);
 
@@ -3111,6 +3085,12 @@ Sizes
     
     scrollbar-width: none;
     
+    /*INFO: When active, slide position will be in center of viewport */
+    [data-slide-select-handler] {
+      position: absolute;
+      inset: 0 50%; 
+    }
+    
     &:has([data-slide-select-handler]:focus) {
       box-shadow: 0 0 0 .125rem var(--transparent-color);
     }
@@ -3127,7 +3107,7 @@ Sizes
     }
     
     .card__content {
-      background-color: var(--bg-color-text);
+      background: var(--background-color-text);
       
       height: fit-content;
       min-width: 280px;
@@ -3149,7 +3129,7 @@ Sizes
     }
     
     .card__media {
-      /* INFO: If it spans the whole area, give it a high value here or in the first row of the .card grid */
+      /* INFO: If spans the whole area, give property -- high value here or in the first row of the .card grid */
       grid-area: 1 / 1 / 1 / -1;
       
       img {
@@ -3173,14 +3153,14 @@ Sizes
       
       line-height: 1;
 
-      background: var(--bg-color-clickable);
+      background: var(--background-color-clickable);
 
-      color: var(--controls--font-color);
-      border: 0 var(--slide__navigators--border-style, solid) var(--border-color-control);
-        border-width: var(--slide__navigators--borders-width, 1px);
-      border-radius: .25rem;
+      color: var(--controls--color);
+      border: 0 var(--slide__navigators--border-style, solid) var(--slide__navigators--border-color, var(--border-color-control));
+        border-width: var(--slide__navigators--border-width, 1px);
+      border-radius: var(--slide__navigators--border-radius, .25rem);
 
-      box-shadow: var(--btn--shadow,);
+      box-shadow: var(--btn--shadow);
       
       margin: 1rem 0 1rem;
       padding: .5rem .75rem;
@@ -3258,11 +3238,11 @@ Sizes
 
     line-height: 1;
 
-    background: var(--bg-color-clickable);
+    background: var(--background-color-clickable);
 
-    border: 0 var(--slide__navigators--border-style, solid) var(--border-color-control);
-      border-width: var(--slide__navigators--borders-width, 1px);
-    border-radius: .25rem;
+    border: 0 var(--slide__navigators--border-style, solid) var(--slide__navigators--border-color, var(--border-color-control));
+      border-width: var(--slide__navigators--border-width, 1px);
+    border-radius: var(--slide__navigators--border-radius, .25rem);
     
     position: absolute;
 
@@ -3289,11 +3269,11 @@ Sizes
   .slide__indicator-item {
     cursor: pointer;
     
-    background: var(--bg-color-clickable);
+    background: var(--slide__indicator-item--background, var(--background-color-clickable));
 
-    border: 0 var(--slide__indicator-item--border-style, solid) var(--slide__indicator-item--border-color, var(--border-color-boundary));
-      border-width: var(--slide__indicator-item--borders-width, 1px);
-    border-radius: .25rem;
+    border: 0 var(--slide__indicator-item--border-style, solid) var(--slide__indicator-item--border-color);
+      border-width: var(--slide__indicator-item--border-width, 1px);
+    border-radius: var(--slide__indicator-item--border-radius, .25rem);
 
     height: .375rem;
     width: 1.75rem;
@@ -3304,6 +3284,7 @@ Sizes
     }
   }
 
+  .slide__indicator-item:where([data-slide-active="true" i]),
   .slide:has(.slide__item:nth-child(1) [data-slide-select-handler]:checked) .slide__indicator-item:nth-child(1),
   .slide:has(.slide__item:nth-child(2) [data-slide-select-handler]:checked) .slide__indicator-item:nth-child(2),
   .slide:has(.slide__item:nth-child(3) [data-slide-select-handler]:checked) .slide__indicator-item:nth-child(3),
@@ -3319,10 +3300,10 @@ Sizes
   .slide:has(.slide__item:nth-child(13) [data-slide-select-handler]:checked) .slide__indicator-item:nth-child(13),
   .slide:has(.slide__item:nth-child(14) [data-slide-select-handler]:checked) .slide__indicator-item:nth-child(14),
   .slide:has(.slide__item:nth-child(15) [data-slide-select-handler]:checked) .slide__indicator-item:nth-child(15) {
-    background: var(--bg-color-off);
+    background: var(--slide__indicator-item--active--background, var(--background-color-off));
     
-    border: 0 var(--slide__indicator-item--active--border-style, solid) var(--slide__indicator-item--active--border-color, var(--border-color-boundary));
-      border-width: var(--slide__indicator-item--active--borders-width, 0px);
+    border: 0 var(--slide__indicator-item--active--border-style, solid) var(--slide__indicator-item--active--border-color);
+      border-width: var(--slide__indicator-item--active--border-width, 0px);
   }
 
   /*
@@ -3331,7 +3312,7 @@ Sizes
   .group,
   .group-vertical {
     display: flex;
-    align-items: baseline; /* stretch */
+    align-items: baseline; /* or stretch */
   }
 
   .group-vertical {
@@ -3375,7 +3356,7 @@ Sizes
   }
 
   .group__action {
-    padding: var(--btn--paddings);
+    padding: var(--btn--padding);
 
     :where(.group, .group-vertical):has(> .group__label, > .group__input) > & {
       padding: .125em 1em .25em;
@@ -3447,14 +3428,10 @@ Sizes
     margin: -.5em auto .25rem;
   }
 
-  /**
-   * form__control kelas untuk elemen kontrol, atau elemen penampung kontrols.
-   * 
-   * form__control [group]
-   */
   .form__control {
     color: var(--font-color);
-    border: var(--controls--border);
+    border: 0 var(--controls--border-style) var(--controls--border-color);
+      border-width: var(--controls--border-width);
     
     width: 100%;
 
@@ -3462,23 +3439,23 @@ Sizes
 
     :where(&) .group__label {
       color: var(--font-color-alt-1);
-      background: var(--bg-color);
+      background: var(--background-color);
     }
 
     & > :is(:first-child):is(:last-child) {
       width: 100%;
       margin: 0;
     }
-
-    & > * {
+    
+    & > *:not([type="checkbox"], [type="radio"]) {
       border-width: 0;
     }
-
-    &:not(.group-vertical) > :not(:last-child) {
+    
+    &:not(.group-vertical) > :not([type="checkbox"], [type="radio"], :last-child) {
       border-right-width: 1px;
     }
 
-    &:is(.group-vertical) > :not(:last-child) {
+    &:is(.group-vertical) > :not([type="checkbox"], [type="radio"], :last-child) {
       border-bottom-width: 1px;
     }
 
@@ -3499,7 +3476,7 @@ Sizes
 
   /**
    * You can rewrite [data-is-valid] into .data-is-valid, and
-   * [data-is-invalid] into .data-is-invalid, and
+   * [data-is-invalid] into .data-is-invalid
    */
   .feedback,
   .valid-feedback,
@@ -3551,12 +3528,12 @@ Sizes
     }
     
     &:not(.form__control--validation-border) {
-      background: var(--input--bg-color) url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='oklch(0.58 0.19 135.24)' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e") right .5em center/1.2em no-repeat;
+      background: var(--input--background) url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='oklch(0.58 0.19 135.24)' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e") right .5em center/1.2em no-repeat;
       padding-right: 2.25em;
-    }
-
-    & > :last-child {
-      border-width: 0 1px 0 0;
+      
+      > :last-child {
+        border-width: 0 1px 0 0;
+      }
     }
   }
 
@@ -3568,12 +3545,12 @@ Sizes
     }
     
     &:not(.form__control--validation-border) {
-      background: var(--input--bg-color) url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='oklch(0.58 0.15 108.19)'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='oklch(0.58 0.15 108.19)' stroke='none'/%3e%3c/svg%3e") right .5em center/1.25em no-repeat;
+      background: var(--input--background) url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='oklch(0.58 0.15 108.19)'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='oklch(0.58 0.15 108.19)' stroke='none'/%3e%3c/svg%3e") right .5em center/1.25em no-repeat;
       padding-right: 2.25em;
-    }
-
-    & > :last-child {
-      border-width: 0 1px 0 0;
+      
+      > :last-child {
+        border-width: 0 1px 0 0;
+      }
     }
   }
 
@@ -3625,7 +3602,7 @@ Sizes
     margin-right: calc(-0.5 * var(--gutter-x));
     margin-bottom: 1rem;
     margin-left: calc(-0.5 * var(--gutter-x));
-    /* Cant do complex 
+    /* INFO: Cant do complex 
     margin: calc(var(--gutter-y) * -1) calc(var(--gutter-x) * -0.5) 1rem calc(var(--gutter-x) * -0.5); */
     
     & > * {
@@ -3723,21 +3700,21 @@ Sizes
         transition: none;
 
         &:first-child {
-          border-width: var(--accordion--borders-width, 1px 1px 0 1px);
+          border-width: var(--accordion-first-child--border-width, 1px 1px 0 1px);
           border-radius: unset;
           border-top-left-radius: inherit;
           border-bottom-left-radius: inherit;
         }
 
         &:last-child {
-          border-width: var(--accordion--borders-width, 0 1px 1px 1px);
+          border-width: var(--accordion-last-child--border-width, 0 1px 1px 1px);
           border-radius: unset;
           border-top-right-radius: inherit;
           border-bottom-right-radius: inherit;
         }
 
         &:not(:first-child, :last-child) {
-          border-width: var(--accordion--borders-width, 1px 1px 1px 1px);
+          border-width: var(--accordion--border-width, 1px 1px 1px 1px);
         }
       }
 
@@ -3863,21 +3840,21 @@ Sizes
         transition: none;
 
         &:first-child {
-          border-width: var(--accordion--borders-width, 1px 1px 0 1px);
+          border-width: var(--accordion-first-child--border-width, 1px 1px 0 1px);
           border-radius: unset;
           border-top-left-radius: inherit;
           border-bottom-left-radius: inherit;
         }
 
         &:last-child {
-          border-width: var(--accordion--borders-width, 0 1px 1px 1px);
+          border-width: var(--accordion-last-child--border-width, 0 1px 1px 1px);
           border-radius: unset;
           border-top-right-radius: inherit;
           border-bottom-right-radius: inherit;
         }
 
         &:not(:first-child, :last-child) {
-          border-width: var(--accordion--borders-width, 1px 1px 1px 1px);
+          border-width: var(--accordion--border-width, 1px 1px 1px 1px);
         }
       }
 
@@ -4003,21 +3980,21 @@ Sizes
         transition: none;
 
         &:first-child {
-          border-width: var(--accordion--borders-width, 1px 1px 0 1px);
+          border-width: var(--accordion-first-child--border-width, 1px 1px 0 1px);
           border-radius: unset;
           border-top-left-radius: inherit;
           border-bottom-left-radius: inherit;
         }
 
         &:last-child {
-          border-width: var(--accordion--borders-width, 0 1px 1px 1px);
+          border-width: var(--accordion-last-child--border-width, 0 1px 1px 1px);
           border-radius: unset;
           border-top-right-radius: inherit;
           border-bottom-right-radius: inherit;
         }
 
         &:not(:first-child, :last-child) {
-          border-width: var(--accordion--borders-width, 1px 1px 1px 1px);
+          border-width: var(--accordion--border-width, 1px 1px 1px 1px);
         }
       }
 
@@ -4148,9 +4125,12 @@ Sizes
     .navbar--vmd-compact {
       justify-content: space-between;
 
-      .navbar__toggle,
-      .active-invisible {
-        display: block;
+      :where(.navbar__toggle) {
+        position: static;
+
+        opacity: 1;
+        overflow: initial;
+        visibility: visible;
       }
 
       > .nav {
@@ -4207,7 +4187,7 @@ Sizes
         }
       }
 
-      :where(&)[data-navbar-active],
+      :where(&)[data-navbar-active="true" i],
       &:has([data-toggle-navbar-handler]:checked) {
         > .nav {
           display: block;
@@ -4227,8 +4207,8 @@ Sizes
     .appear--vmd-offcanvas {
       /* --appear-size: 300px; */
 
-      background: oklch(from var(--bg-color-text) l c h / .35);
-      backdrop-filter: blur(.25rem);
+      background: var(--backdrop--background);
+      backdrop-filter: blur(1px);
 
       max-height: initial;
       max-width: initial;
@@ -4242,7 +4222,7 @@ Sizes
       transition: visibility 350ms ease-in-out;
 
       .appear__content {
-        background: var(--appear--vmd-offcanvas__-appear__content--background, var(--appear--offcanvas__-appear__content--background, var(--bg-color)));
+        background: var(--appear--offcanvas_-appear__content--background);
 
         min-height: 50px;
         height: auto;
@@ -4258,7 +4238,7 @@ Sizes
         transition: translate 350ms ease-in-out;
       }
 
-      &:where([data-appear-active]),
+      &:where([data-appear-active="true" i]),
       &:has(> [data-appear-handler]:checked) {
         visibility: visible;
 
@@ -4326,9 +4306,12 @@ Sizes
     .navbar--vsm-compact {
       justify-content: space-between;
 
-      .navbar__toggle,
-      .active-invisible {
-        display: block;
+      :where(.navbar__toggle) {
+        position: static;
+
+        opacity: 1;
+        overflow: initial;
+        visibility: visible;
       }
 
       > .nav {
@@ -4385,7 +4368,7 @@ Sizes
         }
       }
 
-      :where(&)[data-navbar-active],
+      :where(&)[data-navbar-active="true" i],
       &:has([data-toggle-navbar-handler]:checked) {
         > .nav {
           display: block;
@@ -4405,8 +4388,8 @@ Sizes
     .appear--vsm-offcanvas {
       /* --appear-size: 300px; */
 
-      background: oklch(from var(--bg-color-text) l c h / .35);
-      backdrop-filter: blur(.25rem);
+      background: var(--backdrop--background);
+      backdrop-filter: blur(1px);
 
       max-height: initial;
       max-width: initial;
@@ -4420,7 +4403,7 @@ Sizes
       transition: visibility 350ms ease-in-out;
 
       .appear__content {
-        background: var(--appear--vsm-offcanvas__-appear__content--background, var(--appear--offcanvas__-appear__content--background, var(--bg-color)));
+        background: var(--appear--offcanvas_-appear__content--background);
 
         min-height: 50px;
         height: auto;
@@ -4436,7 +4419,7 @@ Sizes
         transition: translate 350ms ease-in-out;
       }
 
-      &:where([data-appear-active]),
+      &:where([data-appear-active="true" i]),
       &:has(> [data-appear-handler]:checked) {
         visibility: visible;
 

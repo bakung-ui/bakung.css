@@ -1,5 +1,27 @@
 # Changes to bakung.css
 
+### v26.3.0
+
+* Update `background-color` of `appear--*offcanvas` to `blur(1px)`;
+
+* Update `.navbar--breadcrumb, .navbar--breadcrumb > .nav` set `background: unset`.
+
+* Fix `.header-*` typo `dsiplay`.
+
+* Update `.header-*` move `display, margin` properties to lower specifity.
+
+* Add `.font-weight-100 ... .font-weight-900` properties.
+
+* Update elements with `backdrop-filter` property, set their value to `blur(1px)`.
+
+* Fix `slide__item` center in viewport when active.
+
+* Update `_utilites.css` set `c-*` to `cursor-*`, `d-*` to `display-*`, and `z-index--*` to `z-index-*`.
+
+* Add `header-8` to `_utilites.css set`.
+
+* Remove redudancy variable `--avatar-size`, `--badge-size`, `--btn-size`, `--visual-aside-size`, and `--visual-indicator-size`.
+
 ### v26.2.0
 
 * Add `[data-appear-active]` for `appear` component.

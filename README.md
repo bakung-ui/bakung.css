@@ -1,8 +1,8 @@
 # bakung.css
 
-> A lightweight, zero-JS composable HTML-UI library designed for those who build on desktop and aim for mobile.
+> A modern, lightweight, zero-JS composable HTML-UI library designed for those who build on desktop and aim for mobile.
 
-Bakung.css has zero config customization, easy to tweak without needing to know SASS/SCSS or even touch the original CSS file. We achieve this by leveraging CSS variables.
+Bakung.css is a lightweight, pure-css framework offering config-free customization, and is easy to tweak without needing to know SASS/SCSS or even touch the original CSS file. We achieve this by leveraging CSS variables.
 
 Although this is a pure-CSS framework with no built-in JavaScript, we provide dedicated CSS attributes that you can leverage to integrate your own custom scripts.
 

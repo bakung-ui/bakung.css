@@ -1,6 +1,6 @@
 {
   "name": "@bakung-ui/bakung.css",
-  "description": "A lightweight, zero-JS composable HTML-UI library designed for those who build on desktop and aim for mobile.",
+  "description": "A modern, lightweight, zero-JS composable HTML-UI library designed for those who build on desktop and aim for mobile",
   "version": "26.2.0",
   "keywords": [
     "css",
@@ -10,6 +10,7 @@
     "pure-css",
     "lightweight-css",
     "web-components",
+    "web-theme",
     "responsive"
   ],
   "author": "Tria Warman @triawarman",

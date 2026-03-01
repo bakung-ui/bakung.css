@@ -8,6 +8,8 @@
 
 ## Overrides variables for @bakung-ui/minimax.css/css/_variables.css
 
+## New global variables
+
 ## Components
 
 ## Spaces
@@ -182,59 +184,8 @@
   --color-danger-90: oklch(0.22 0.23 17.23);
   
   /*
-  ## Overrides variables for @bakung-ui/minimax.css/css/_variables.css
-  */
-  --bg-color-off: oklch(0.9 0.02 285.26);
-  --bg-color-active: oklch(0.97 0.01 285.51);
-  
-  /* .dialog, .popper */
-  --border-color-light: oklch(0.9 0.02 285.18);
-  
-  --popper--background: var(--bg-color-alt-1);
-  --divider--background: var(--bg-color-alt-1);
-  --navbar--background: var(--bg-color-alt-1);
-  --nav--background: var(--bg-color-alt-1);
-  --nav__-nav--background: var(--bg-color-alt-1);
-  --dialog--background: var(--bg-color-alt-1);
-  --card--background: var(--bg-color-alt-1);
-  --accordions-background: var(--bg-color-alt-1);
-  --tab__nav_-checked--background: var(--bg-color-alt-1);
-  --tabs__content--background: var(--bg-color-alt-1);
-  --appear--offcanvas__-appear__content--background: var(--bg-color-alt-1);
-  /*
-   --shadow-float: dialog, [popover], .appear--offcanvas, .notice--notify
-   --shadow-float-alt-1: .popper, .navbar > .nav > .nav__item > .nav
-   --shadow-clickable: button
-   --shadow-border: .tabs, .card
-   */
-  --shadow-float-alt-1: drop-shadow(0 2px 2px var(--transparent-color));
-  --shadow-border: drop-shadow(0 1px 1px var(--transparent-color));
-  
-  --as-btn--paddings: .21lh 1em .26lh;
-  --as-btn--paddings: .2lh .75lh .25lh;
-
-  /*
-  ## Components
-  */
-  --breadcrumb-divider: attr(be-breadcrumb-divider, '/');
-  --appear-size: 300px;
-  --accordions--height: 290px;
-  --cards--slide--height: auto;
-  --slide-prev-nav: attr(be-prev-nav, '<');
-  --slide-next-nav: attr(be-next-nav, '>');
-
-  /*
   ## Spaces
   */
-  --avatar-size: 1;
-  --badge-size: 1;
-  --btn-size: 1;
-  --toggle-size: 1;
-  --popper-space: 1;
-  --indicator-dimension: 1em;
-  --visual-aside-size: 1;
-  --visual-indicator-size: 1;
-  
   --space-distance-1: 1rem;
   --space-distance-2: 1.25rem;
   --space-distance-3: 1.5rem;
@@ -261,16 +212,78 @@
   --z-index-popover: 1070;
   --z-index-tooltip: 1080;
   
+  
+  /*
+  ## Overrides variables for @bakung-ui/minimax.css/css/_variables.css
+  */
+  --background-color-off: oklch(0.9 0.02 285.26);
+  --background-color-active: oklch(0.97 0.01 285.51);
+  
+  /*
+  ## New global variables
+  */
+  
+  /*#
+   --shadow-float: dialog, [popover], .appear--offcanvas, .notice--notify
+   --shadow-float-alt-1: .popper, .navbar > .nav > .nav__item > .nav
+   --shadow-clickable: button
+   --shadow-border: .tabs, .card
+   #*/
+  --shadow-float-alt-1: drop-shadow(0 2px 2px var(--transparent-color));
+  --shadow-border: drop-shadow(0 1px 1px var(--transparent-color));
+  
+  --indicator-dimension: 1em;
+  
+  
+  /*
+  ## Components
+  */
+  --badge--color: var(--color-base-50);
+  --badge--background: var(--background-color-text);
+  --badge--border-color: var(--boundary--border-color);
+  
+  --btn--icon-font-size: var(--btn--font-size);
+  --as-btn--padding: .21lh 1em .26lh;
+  --as-btn--padding: .2lh .75lh .25lh;
+  
+  --toggle-size: 1;
+  
+  --divider--background: var(--background-color);
+  
+  --navbar--background: var(--background-color);
+  --nav__nav--background: var(--background-color);
+  /*# --breadcrumb-divider: attr(be-breadcrumb-divider, '/'); #*/
+  --navbar--breadcrumb-gap: 0 1.5rem;
+  
+  --step__body--color: var(--font-color-alt-2);
+  --step__indicator--border-color: var(--background-color);
+  
+  --tabs__nav--border-color: var(--boundary--border-color);
+  --tabs__content--background: var(--background-color);
+  --tab__nav--active--background: var(--background-color);
+  
+  --notice--background-color: var(--background-color);
+  --notice--border-color: var(--boundary--border-color);
+  
+  --popper-space: 1;
+  --popper--background: var(--background-color);
+  --popper--border-color: var(--boundary--border-color);
+  
+  --appear-size: 300px;
+  --appear--offcanvas_-appear__content--background: var(--background-color);
+  
+  --accordions--height: 290px;
+  --accordions--background: var(--background-color);
+  --accordion--border-color: var(--boundary--border-color);
+  --accordion__header--background: var(--background-color-clickable);
+  --accordion__header--border-color: var(--boundary--border-color);
+  
+  --card--background: var(--background-color);
+  --cards--slide--height: auto;
+  
+  --slide__indicator-item--border-color: var(--boundary--border-color);
+  --slide__indicator-item--active--border-color: var(--boundary--border-color);
+  --slide-prev-nav: attr(be-prev-nav, '<');
+  --slide-next-nav: attr(be-next-nav, '>');
+  
 } /*end of :root*/
-
-
-
-
-
-
-
-
-
-
-
-

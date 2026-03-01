@@ -48,8 +48,8 @@
     position: relative;
 
     display: inline-block;
-    height: var(--indicator-dimension);
-    width: var(--indicator-dimension);
+    height: var(--indicator-dimension, 1em);
+    width: var(--indicator-dimension, 1em);
 
     line-height: 1;
     
@@ -305,20 +305,20 @@
 
   /**************** Visual aside & visual indicator ****************/
   .visual-aside {
-    font-size: calc(var(--visual-aside--font-size, 1em) * var(--visual-aside-size));
+    font-size: var(--visual-aside--font-size, 1em);
 
-    height: var(--indicator-dimension);
-    width: var(--indicator-dimension);
+    height: var(--indicator-dimension, 1em);
+    width: var(--indicator-dimension, 1em);
 
     position: relative;
     display: inline-block;
   }
 
   .visual-indicator {
-    font-size: calc(var(--visual-indicator--font-size, 1em) * var(--visual-indicator-size));
+    font-size: var(--visual-indicator--font-size, 1em);
 
-    height: var(--indicator-dimension);
-    width: var(--indicator-dimension);
+    height: var(--indicator-dimension, 1em);
+    width: var(--indicator-dimension, 1em);
 
     position: relative;
     display: inline-block;
@@ -326,22 +326,18 @@
   
   /**************** Stack ****************/
   .stack {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
+    display: inline-grid;
+    place-items: center;
     height: 2em;
-    line-height: 2em;
-    position: relative;
-    vertical-align: middle;
     width: 2.5em;
-  }
-
-  .stack-1x, .stack-2x {
-    left: 0;
-    position: absolute;
-    text-align: center;
-    width: 100%;
-    z-index: var(--stack-z-index, auto);
+    
+    > * {
+      grid-area: 1 / 1;
+    }
+    
+    > :where([be-icon].stack-1x) {
+      translate: 0 .25em;
+    }
   }
 
   .stack-2x {
@@ -429,5 +425,56 @@
 
     opacity: 1;
     overflow: initial;
+  }
+  
+  /*
+  ### @Media screen
+  */
+  @media screen and (max-width: 1280px) {
+    /*
+    ### Visibilities
+    */
+    .invisible-vmd {
+        position: absolute;
+        height: 0;
+        width: 0;
+
+        opacity: 0;
+        overflow: auto;
+        overflow: clip;
+    }
+
+    .visible-vmd {
+        position: static;
+        height: auto;
+        width: auto;
+
+        opacity: 1;
+        overflow: initial;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    /*
+    ### Visibilities
+    */
+    .invisible-vsm {
+        position: absolute;
+        height: 0;
+        width: 0;
+
+        opacity: 0;
+        overflow: auto;
+        overflow: clip;
+    }
+
+    .visible-vsm {
+        position: static;
+        height: auto;
+        width: auto;
+
+        opacity: 1;
+        overflow: initial;
+    }
   }
 }
