@@ -47,7 +47,7 @@
                     Colors
                 </label> 
               |
-              Build v26.2.0
+              Build v26.3.0
             </div>
 
             <div class="appear" aria-labelledby="header-test" role="region" data-section="Ikon">
@@ -88,7 +88,7 @@
 
                         </div>
                         <details>
-                            <summary class="btn btn--ghost d-inline-block margins-unset">
+                            <summary class="btn btn--ghost display-inline-block margins-unset">
                                 View code
                             </summary>
                             <pre>
@@ -385,10 +385,8 @@
                                 Text White with low background-color
                             </button>
 
-                            <br/>
-
                             <details>
-                                <summary class="btn btn--ghost d-inline-block margins-unset">
+                                <summary class="btn btn--ghost display-inline-block margins-unset">
                                     View code
                                 </summary>
                                 <pre>
@@ -429,8 +427,8 @@ Text White with low background-color
             <span class="visual-aside" be-icon="burger-menu"></span>
         </button>
         <div class="popper popper--focus popper--rb popper--pointer popper--list" style="--popper-space: 3;">
-            <div class="popper__content">popper
-                <nav class="navbar navbar--compact navbar--no-hover" data-navbar-active>
+            <div class="popper__content">
+                <nav class="navbar navbar--compact navbar--no-hover" data-navbar-active="true">
                     <ul class="nav">
                         <li class="nav__item a">
                             <a href="#asd">Visual components</a>
@@ -698,9 +696,9 @@ Text White with low background-color
             <p class="subheader">Build on desktop, aim for mobile.</p>
         </h1>
         
-        <section class="block-samples" data-section="block-samples">
+        <section class="block-samples block-samples--no-sample" data-section="block-samples">
             <details>
-                <summary class="btn btn--ghost d-inline-block margins-unset">
+                <summary class="btn btn--ghost display-inline-block margins-unset">
                     From Author
                 </summary>
                 <div>
@@ -753,9 +751,9 @@ Text White with low background-color
             To get Bakung CSS looking its best, you'll need to include Google Fonts and <samp>@bakung-ui/minimax.css</samp>, which serves as the foundation for the framework. Check out our recommended HTML template to see how to set it up.
         </p>
         
-        <section class="block-samples" data-section="block-samples">
+        <section class="block-samples block-samples--no-sample" data-section="block-samples">
             <details>
-                <summary class="btn btn--ghost d-inline-block margins-unset">
+                <summary class="btn btn--ghost display-inline-block margins-unset">
                     View the starter template
                 </summary>
                 <pre>
@@ -828,11 +826,8 @@ Text White with low background-color
                 ggjjGHGHGjjgg <i be-icon="left-check"></i>
             </button>
 
-            <br/>
-            <br/>
-
             <details>
-                <summary class="btn btn--ghost d-inline-block margins-unset">
+                <summary class="btn btn--ghost display-inline-block margins-unset">
                     View code
                 </summary>
                 <pre>
@@ -963,10 +958,8 @@ Text White with low background-color
                     Colored link button
                 </a>
 
-                <br/><br/>
-
                 <details>
-                    <summary class="btn btn--ghost d-inline-block margins-unset">
+                    <summary class="btn btn--ghost display-inline-block margins-unset">
                         View code
                     </summary>
                     <pre>
@@ -1032,9 +1025,6 @@ Text White with low background-color
                     Changing the appearance:
                 </p>
                 <ul>
-                    <li>
-                        <code>--btn-size</code> defaults to 1. Switch this up to get a different size, or you can achieve the same thing by changing the <code>font-size</code>.
-                    </li>
                     <li>
                         <code>[disabled]</code> to show that an element can't be used.
                     </li>
@@ -1118,16 +1108,14 @@ Text White with low background-color
                     <span class="avatar__indicator">
                     </span>
                 </span>
-                <span class="avatar" style="--avatar-size: 2;" data-avatar-name="John">
+                <span class="avatar" data-avatar-name="John">
                     <!-- alternative: class="avatar__indicator bg-success" -->
                     <span class="avatar__indicator" style="background-color: var(--color-success-50);">
                     </span>
                 </span>
 
-                <br/><br/>
-
                 <details>
-                    <summary class="btn btn--ghost d-inline-block margins-unset">
+                    <summary class="btn btn--ghost display-inline-block margins-unset">
                         View code
                     </summary>
                     <pre>
@@ -1146,7 +1134,7 @@ Text White with low background-color
     &lt;span class="avatar__indicator"&gt;
     &lt;/span&gt;
 &lt;/span&gt;
-&lt;span class="avatar" style="--avatar-size: 2;" data-avatar-name="John"&gt;
+&lt;span class="avatar" data-avatar-name="John"&gt;
     &lt;!-- alternative: class="avatar__indicator bg-success" --&gt;
     &lt;span class="avatar__indicator" style="background-color: var(--color-success-50);"&gt;
     &lt;/span&gt;
@@ -1166,15 +1154,6 @@ Text White with low background-color
                     Support Classes and Attributes
                 </h4>
                 
-                <p>
-                    Changing the appearance:
-                </p>
-                <ul>
-                    <li>
-                        <code>--avatar-size</code> defaults to 1. Switch this up to change the scale, or you can achieve the same result by overriding the <code>font-size</code>
-                    </li>
-                </ul>
-
                 <p>
                     Specific behaviors:
                 </p>
@@ -1201,10 +1180,8 @@ Text White with low background-color
             <span class="badge badge--caution"><span class="visual-aside"><span be-icon="triangle"></span></span> Caution</span>
             <a class="badge badge--low" href="#asd">A Link<span class="visual-indicator" be-icon="external-link"></span></a>
 
-            <br/><br/>
-
             <details>
-                <summary class="btn btn--ghost d-inline-block margins-unset">
+                <summary class="btn btn--ghost display-inline-block margins-unset">
                     View code
                 </summary>
                 <pre>
@@ -1237,15 +1214,6 @@ Text White with low background-color
                 <h4 data-title="keywords-header">
                     Support Classes and Attributes
                 </h4>
-                
-                <p>
-                    Changing the appearance:
-                </p>
-                <ul>
-                    <li>
-                        <code>--badge-size</code> defaults to 1. Switch this up to change the scale, or you can achieve the same result by overriding the <code>font-size</code>
-                    </li>
-                </ul>
                 
                 <p>
                     Changing the color theme:
@@ -1305,10 +1273,8 @@ class="visual-indicator" be-icon="external-link"></span></a>
                 <button class="btn btn--icon"><span be-icon="x"></span></button>
             </span>
 
-            <br/><br/>
-
             <details>
-                <summary class="btn btn--ghost d-inline-block margins-unset">
+                <summary class="btn btn--ghost display-inline-block margins-unset">
                     View code
                 </summary>
                 <pre>
@@ -1394,10 +1360,8 @@ class="visual-indicator" be-icon="external-link"&gt;&lt;/span&gt;&lt;/a&gt;
                   </fieldset>
               </fieldset>
 
-              <br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -1477,10 +1441,8 @@ class="visual-indicator" be-icon="external-link"&gt;&lt;/span&gt;&lt;/a&gt;
                   <label class="badge badge--chip" be-switchable><input class="invisible" type="radio" name="switchable-1" class="invisible" data-state-handler checked><span class="active-visible visual-indicator" be-icon="left-check"></span> Opt 2 </label>
               </fieldset>
 
-              <br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -1572,10 +1534,8 @@ class="visual-indicator" be-icon="external-link"&gt;&lt;/span&gt;&lt;/a&gt;
                   Right
               </section>
 
-              <br/><br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -1650,11 +1610,9 @@ Dominant hand:
                 </label>
               </fieldset>
             </section>
-              
-              <br/><br/>
 
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -1737,10 +1695,8 @@ Dominant hand:
                   </p>
               </div>
 
-              <br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -1798,10 +1754,8 @@ Dominant hand:
                   <button be-tooltip="Suis praecipites, imagine quae erat: sanctius iuga ventos locum quin aurea fulgura sic.">Hover me!</button>
               </section>
 
-              <br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -1813,10 +1767,8 @@ Dominant hand:
           <section class="block-samples" data-section="block-samples">
               <button class="tooltip--right tooltip--no-pointer tooltip--focus" be-tooltip="Say something!">Set me :focus</button>
 
-              <br/><br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -1838,7 +1790,7 @@ Dominant hand:
                       <code>[be-tooltip]</code> holds the text that will be displayed inside the element's tooltip.
                   </li>
                   <li>
-                      <code>data-tooltip-active</code> to keep the tooltip visible at all times.
+                      <code>[data-tooltip-active="true"]</code> to keep the tooltip visible at all times.
                   </li>
               </ul>
 
@@ -1890,10 +1842,8 @@ Dominant hand:
                 </div>
             </div>
 
-            <br/>
-
             <details>
-                <summary class="btn btn--ghost d-inline-block margins-unset">
+                <summary class="btn btn--ghost display-inline-block margins-unset">
                     View code
                 </summary>
                 <pre>
@@ -1941,10 +1891,8 @@ Dominant hand:
                   </div>
               </div>
 
-              <br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -1983,7 +1931,7 @@ Dominant hand:
             </section>
 
             <p>
-                If you're writing custom JavaScript and want the popper to stay open even after it loses focus, just add the <code>[data-popper-active]</code> attribute to the component. To close it again, simply remove the attribute.
+                If you're writing custom JavaScript and want the popper to stay open even after it loses focus, just add the <code>[data-popper-active="true"]</code> attribute to the component. To close it again, simply remove the attribute or set the value to false.
             </p>
 
             <section class="paddings-1" data-section="keywords-description">
@@ -2002,7 +1950,7 @@ Dominant hand:
                         <code>popper--focus</code> activates on :focus (via click or keyboard focus).
                     </li>
                     <li>
-                        <code>[data-popper-active]</code> manually shows the popper without needing a hover or click. Typically triggered via <code><javascript></code>.
+                        <code>[data-popper-active="true"]</code> manually shows the popper without needing a hover or click. Typically triggered via <code>&lt;javascript&gt;</code>.
                     </li>
                 </ul>
 
@@ -2083,7 +2031,7 @@ Dominant hand:
         
         <h3 id="steps">Steps <span class="badge badge--info mid-vertical">Update</span></h3>
         <section>
-          <section class="block-samples overflow-auto" data-section="block-samples">
+          <section class="block-samples overflow-auto" data-section="block-samples" style="padding-top: 2rem;">
               <section class="steps">
                   <section class="step">
                       <div class="step__header">
@@ -2128,7 +2076,7 @@ Dominant hand:
               </section>
               
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -2237,7 +2185,7 @@ Dominant hand:
               </section>
 
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -2386,10 +2334,8 @@ Dominant hand:
                   </ul>
               </nav>
 
-              <br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -2485,10 +2431,8 @@ Dominant hand:
                   </ul>
               </nav>
 
-              <br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -2537,7 +2481,7 @@ Dominant hand:
                   <div class="navbar__brand">
                       <a href="#asd">Brand</a>
                   </div>
-                  <label for="navbar-toggle" class="navbar__toggle">
+                  <label for="navbar-toggle" class="navbar__toggle btn btn--icon">
                       <input type="checkbox" id="navbar-toggle" class="invisible" data-toggle-navbar-handler name="toggle-checkbox-2">
 
                       <span class="visual-indicator active-invisible" be-icon="burger-menu">
@@ -2564,10 +2508,8 @@ Dominant hand:
                   </ul>
               </nav>
 
-              <br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -2575,7 +2517,7 @@ Dominant hand:
   &lt;div class="navbar__brand"&gt;
       &lt;a href="#asd"&gt;Brand&lt;/a&gt;
   &lt;/div&gt;
-  &lt;label for="navbar-toggle" class="navbar__toggle"&gt;
+  &lt;label for="navbar-toggle" class="navbar__toggle btn btn--icon"&gt;
       &lt;input type="checkbox" id="navbar-toggle" class="invisible" data-toggle-navbar-handler name="toggle-checkbox-2"&gt;
 
       &lt;span class="visual-indicator active-invisible" be-icon="burger-menu"&gt;
@@ -2633,7 +2575,7 @@ Dominant hand:
                         <code>navbar--vmd-compact</code> triggers a compact look for screen widths up to 1280px.
                     </li>
                     <li>
-                        <code>[data-navbar-active]</code> forces the <code>navbar--*compact</code> into its open state
+                        <code>[data-navbar-active="true"]</code> forces the <code>navbar--*compact</code> into its open state. Make sure there is no <code>&lt;input data-toggle-navbar-handler/&gt;</code> element in <code>navbar</code> component.
                     </li>
                 </ul>
 
@@ -2695,10 +2637,8 @@ Dominant hand:
                   </ul>
               </nav>
 
-              <br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -2814,10 +2754,8 @@ Dominant hand:
                   })();
               </script>
 
-              <br/><br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -2897,10 +2835,8 @@ Dominant hand:
                   </footer>
               </dialog>
 
-              <br/><br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -2988,7 +2924,7 @@ Dominant hand:
               </section>
 
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -3142,11 +3078,8 @@ Dominant hand:
                   })();
               </script>
 
-              <br/>
-              <br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -3196,10 +3129,8 @@ Dominant hand:
                   <code>container</code> tanpa batasan lebar, hanya memberi spasi kiri-kanan.
               </div>
 
-              <br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -3274,10 +3205,8 @@ Dominant hand:
                 </div>
             </div>
 
-            <br/>
-
             <details>
-                <summary class="btn btn--ghost d-inline-block margins-unset">
+                <summary class="btn btn--ghost display-inline-block margins-unset">
                     View code
                 </summary>
                 <pre>
@@ -3352,10 +3281,8 @@ Dominant hand:
                   </div>
               </div>
 
-              <br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -3407,10 +3334,8 @@ Dominant hand:
                   <button class="btn btn--normal group__action">Iam Button</button>
               </fieldset>
 
-              <br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -3475,10 +3400,8 @@ Dominant hand:
             </label>
           </fieldset>
 
-          <br/>
-
           <details>
-            <summary class="btn btn--ghost d-inline-block margins-unset">
+            <summary class="btn btn--ghost display-inline-block margins-unset">
                 View code
             </summary>
             <pre>
@@ -3515,10 +3438,8 @@ Dominant hand:
                   <div class="group__label">I'm div</div>
               </div>
 
-              <br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -3532,24 +3453,22 @@ Dominant hand:
           </section>
 
             <p>
-                Add the <code>d-inline-flex</code> class to make the container only as wide as its children, without losing any flex functionality.
+                Add the <code>display-inline-flex</code> class to make the container only as wide as its children, without losing any flex functionality.
             </p>
 
           <section class="block-samples" data-section="block-samples">
-              <div class="group-vertical group--border d-inline-flex shadow">
+              <div class="group-vertical group--border display-inline-flex shadow">
                   <button class="btn btn--normal group__action">I am a button</button>
                   <button class="btn btn--important group__action">I am too</button>
                   <button class="btn btn--critical group__action">I am three</button>
               </div>
 
-              <br/><br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
-&lt;div class="group-vertical group--border d-inline-flex shadow"&gt;
+&lt;div class="group-vertical group--border display-inline-flex shadow"&gt;
   &lt;button class="btn btn--normal group__action"&gt;I am a button&lt;/button&gt;
   &lt;button class="btn btn--important group__action"&gt;I am too&lt;/button&gt;
   &lt;button class="btn btn--critical group__action"&gt;I am three&lt;/button&gt;
@@ -3604,10 +3523,8 @@ Dominant hand:
                   </div>
               </fieldset>
 
-              <br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -3763,7 +3680,7 @@ Dominant hand:
               </fieldset>
 
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -3902,7 +3819,7 @@ Dominant hand:
               </fieldset>
 
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -4038,7 +3955,7 @@ Dominant hand:
               </form>
 
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -4139,7 +4056,7 @@ Dominant hand:
               </form>
 
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -4213,7 +4130,7 @@ Dominant hand:
               </form>
 
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -4317,7 +4234,7 @@ Dominant hand:
               </form>
 
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -4452,10 +4369,8 @@ Dominant hand:
                     </div>
                 </div>
 
-                <br/>
-
                 <details>
-                    <summary class="btn btn--ghost d-inline-block margins-unset">
+                    <summary class="btn btn--ghost display-inline-block margins-unset">
                         View code
                     </summary>
                     <pre>
@@ -4589,12 +4504,9 @@ Dominant hand:
                         });
                     })();
                 </script>
-                
-                <br/>
-                <br/>
 
                 <details>
-                    <summary class="btn btn--ghost d-inline-block margins-unset">
+                    <summary class="btn btn--ghost display-inline-block margins-unset">
                         View code
                     </summary>
                     <pre>
@@ -4626,17 +4538,15 @@ Dominant hand:
                         <img class="img--fit-fill" src="./assets/vasilis-karkalas-i8cDJOiIvTo-unsplash.webp" />
                         <span class="active-visible">Visible when floating (:popover-open())</span>
                         
-                        <button class="btn btn--icon tooltip--right margin-top-.50 margin-right-.50 position-absolute inset-top-left" data-tooltip-active popovertarget="floater-2" popovertargetaction="toggle" be-tooltip="Click me!">
+                        <button class="btn btn--icon tooltip--right margin-top-.50 margin-right-.50 position-absolute inset-top-left" data-tooltip-active="true" popovertarget="floater-2" popovertargetaction="toggle" be-tooltip="Click me!">
                             <span class="invisible">Toggle floater</span>
                             <i be-icon="rectangle"></i>
                         </button>
                     </section>
                 </div>
-                <br/>
-                <br/>
 
                 <details>
-                    <summary class="btn btn--ghost d-inline-block margins-unset">
+                    <summary class="btn btn--ghost display-inline-block margins-unset">
                         View code
                     </summary>
                     <pre>
@@ -4645,7 +4555,7 @@ Dominant hand:
         &lt;img class="img--fit-fill" src="./assets/vasilis-karkalas-i8cDJOiIvTo-unsplash.webp" /&gt;
         &lt;span class="active-visible"&gt;Visible when floating (:popover-open())&lt;/span&gt;
         
-        &lt;button class="btn btn--icon tooltip--right margin-top-.50 margin-right-.50 position-absolute inset-top-left" data-tooltip-active popovertarget="floater-2" popovertargetaction="toggle" be-tooltip="Click me!"&gt;
+        &lt;button class="btn btn--icon tooltip--right margin-top-.50 margin-right-.50 position-absolute inset-top-left" data-tooltip-active="true" popovertarget="floater-2" popovertargetaction="toggle" be-tooltip="Click me!"&gt;
             &lt;span class="invisible"&gt;Toggle floater&lt;/span&gt;
             &lt;i be-icon="rectangle"&gt;&lt;/i&gt;
         &lt;/button&gt;
@@ -4747,10 +4657,8 @@ Dominant hand:
                     </section>
                 </article>
 
-                <br/>
-
                 <details>
-                    <summary class="btn btn--ghost d-inline-block margins-unset">
+                    <summary class="btn btn--ghost display-inline-block margins-unset">
                         View code
                     </summary>
                     <pre>
@@ -4805,10 +4713,8 @@ Dominant hand:
                     </section>
                 </article>
 
-                <br/>
-
                 <details>
-                    <summary class="btn btn--ghost d-inline-block margins-unset">
+                    <summary class="btn btn--ghost display-inline-block margins-unset">
                         View code
                     </summary>
                     <pre>
@@ -4902,10 +4808,8 @@ Dominant hand:
                     </article>
                 </div>
 
-                <br/>
-
                 <details>
-                    <summary class="btn btn--ghost d-inline-block margins-unset">
+                    <summary class="btn btn--ghost display-inline-block margins-unset">
                         View code
                     </summary>
                     <pre>
@@ -5035,10 +4939,8 @@ Dominant hand:
                     </article>
                 </div>
 
-                <br/>
-
                 <details>
-                    <summary class="btn btn--ghost d-inline-block margins-unset">
+                    <summary class="btn btn--ghost display-inline-block margins-unset">
                         View code
                     </summary>
                     <pre>
@@ -5168,10 +5070,8 @@ Dominant hand:
                     </article>
                 </div>
 
-                <br/>
-
                 <details>
-                    <summary class="btn btn--ghost d-inline-block margins-unset">
+                    <summary class="btn btn--ghost display-inline-block margins-unset">
                         View code
                     </summary>
                     <pre>
@@ -5428,12 +5328,9 @@ Dominant hand:
                         </section>
                     </article>
                 </div>
-                
-                <br/>
-                <br/>
 
                 <details>
-                    <summary class="btn btn--ghost d-inline-block margins-unset">
+                    <summary class="btn btn--ghost display-inline-block margins-unset">
                         View code
                     </summary>
                     <pre>
@@ -5927,10 +5824,8 @@ Dominant hand:
                     </button>
                 </section>
 
-                <br/>
-
                 <details>
-                    <summary class="btn btn--ghost d-inline-block margins-unset">
+                    <summary class="btn btn--ghost display-inline-block margins-unset">
                         View code
                     </summary>
                     <pre>
@@ -6281,7 +6176,7 @@ Dominant hand:
               </div>
 
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -6423,7 +6318,7 @@ Dominant hand:
               </div>
 
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -6513,7 +6408,7 @@ Dominant hand:
                 </p>
                 <ul>
                     <li>
-                      <code>[data-accordion-active]</code> attribute to the accordion component to trigger its expanded state.
+                      <code>[data-accordion-active="true"]</code> attribute to the accordion component to trigger its expanded state, make sure there is no <code>&lt;input data-accordion-select-handler&gt;</code> element.
                   </li>
                     <li>
                         <code>accordions--vertical</code> forces a vertical (stacked) layout.
@@ -6570,7 +6465,7 @@ Dominant hand:
               </section>
 
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -6610,7 +6505,7 @@ Dominant hand:
                     <i class="txt-white" be-icon="i"></i>
                 </div>
                 <div class="notice__content">
-                    BakungCss supports 15 tab controls out of the box. If that’s not enough, a bit of JavaScript can remove those limits. To handle the active state yourself, simply apply the <code>[data-tab-active]</code> attribute to both the <code>tab__nav</code> and the corresponding <code>tab__content</code>.
+                    BakungCss supports 15 tab controls out of the box. If that’s not enough, a bit of JavaScript can remove those limits. To handle the active state yourself, simply apply the <code>[data-tab-active="true"]</code> attribute to both the <code>tab__nav</code> and the corresponding <code>tab__content</code>.
                 </div>
             </section>
 
@@ -6618,6 +6513,15 @@ Dominant hand:
                 <h4 data-title="keywords-header">
                     Support Classes and Attributes
                 </h4>
+              
+                <p>
+                    Specific behaviors:
+                </p>
+                <ul>
+                    <li>
+                        <code>[data-tab-active="true"]</code> attribute sets the active state for the tab component, make sure there is no <code>&lt;input data-tab-select-handler name="tab-handler"&gt;</code> element.
+                    </li>
+                </ul>
                 
                 <p>
                     Switch the display position:
@@ -6676,10 +6580,8 @@ Dominant hand:
                   </section>
               </div>
 
-              <br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -6754,7 +6656,7 @@ You can put appear-component any where!
                       <input type="checkbox" id="appear-left" class="invisible" data-appear-handler name="appear-left">
                       <div class="appear__overflow">
                           <div class="appear__content">
-                          <nav class="navbar navbar--compact navbar--no-hover" data-navbar-active>
+                          <nav class="navbar navbar--compact navbar--no-hover" data-navbar-active="true">
                                   <div class="navbar__brand">
                                   <a href="#asd">Brand</a>
                                   </div>
@@ -6814,10 +6716,8 @@ You can put appear-component any where!
                   </div>
               </div>
 
-              <br/><br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -6846,7 +6746,7 @@ You can put appear-component any where!
       &lt;input type="checkbox" id="appear-left" class="invisible" data-appear-handler name="appear-left"&gt;
       &lt;div class="appear__overflow"&gt;
           &lt;div class="appear__content"&gt;
-          &lt;nav class="navbar navbar--compact navbar--no-hover" data-navbar-active&gt;
+          &lt;nav class="navbar navbar--compact navbar--no-hover" data-navbar-active="true"&gt;
                   &lt;div class="navbar__brand"&gt;
                   &lt;a href="#asd"&gt;Brand&lt;/a&gt;
                   &lt;/div&gt;
@@ -6926,9 +6826,9 @@ You can put appear-component any where!
                 Sometimes you might want a mix of both a floating overlay that switches to a "push" effect on larger screens. To do this, swap out <code>appear--offcanvas</code> for <code>appear--vsm-offcanvas</code> (which keeps the overlay behavior up to 768px) or <code>appear--vmd-offcanvas</code> (up to 1280px).
             </p>
 
-            <section class="block-samples" data-section="block-samples">
+            <section class="block-samples block-samples--no-sample" data-section="block-samples">
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       Container layouts based on where the <code>appear</code> component pops up:
                   </summary>
                   <pre>
@@ -7032,7 +6932,7 @@ You can put appear-component any where!
                 </p>
                 <ul>
                     <li>
-                        <code>[data-appear-active]</code> attribute to trigger the open state of the appear component.
+                        <code>[data-appear-active="true"]</code> attribute to trigger the open state of the appear component, make sure there is no <code>&lt;input data-appear-handler&gt;</code> element.
                     </li>
                     <li>
                         <code>appear--fix</code> gives the <code>appear</code> component a fixed size. You can set your preferred dimensions using the <code>--appear-size</code> CSS variable.

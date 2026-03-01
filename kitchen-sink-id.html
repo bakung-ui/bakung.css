@@ -47,7 +47,7 @@
                   Warna
               </label> 
               |
-              Build v26.2.0
+              Build v26.3.0
           </div>
           <div class="appear" aria-labelledby="header-test" role="region" data-section="Ikon">
               <input type="checkbox" id="icon-rules" class="invisible" data-appear-handler name="icon-rules">
@@ -87,7 +87,7 @@
 
                       </div>
                       <details>
-                          <summary class="btn btn--ghost d-inline-block margins-unset">
+                          <summary class="btn btn--ghost display-inline-block margins-unset">
                               View code
                           </summary>
                           <pre>
@@ -384,10 +384,8 @@
                               Text White with low background-color
                           </button>
 
-                          <br/>
-
                           <details>
-                              <summary class="btn btn--ghost d-inline-block margins-unset">
+                              <summary class="btn btn--ghost display-inline-block margins-unset">
                                   View code
                               </summary>
                               <pre>
@@ -428,8 +426,8 @@ Text White with low background-color
               <span class="visual-aside" be-icon="burger-menu"></span>
           </button>
           <div class="popper popper--focus popper--rb popper--pointer popper--list" style="--popper-space: 3;">
-              <div class="popper__content">popper
-                  <nav class="navbar navbar--compact navbar--no-hover" data-navbar-active>
+              <div class="popper__content">
+                  <nav class="navbar navbar--compact navbar--no-hover" data-navbar-active="true">
                       <ul class="nav">
                           <li class="nav__item a">
                               <a href="#asd">Visual components</a>
@@ -697,9 +695,9 @@ Text White with low background-color
           <p class="subheader">Bangun di desktop mentarget perangkat lebih kecil</p>
       </h1>
       
-      <section class="block-samples" data-section="block-samples">
+      <section class="block-samples block-samples--no-sample" data-section="block-samples">
           <details>
-              <summary class="btn btn--ghost d-inline-block margins-unset">
+              <summary class="btn btn--ghost display-inline-block margins-unset">
                   Dari penulis
               </summary>
               <div>
@@ -752,9 +750,9 @@ Text White with low background-color
           Agar Bakung CSS dapat memberikan tampilan yang seharusnya, diperlukan beberapa hal seperti fonts google dan <samp>@bakung-ui/minimax.css</samp> yang berfungsi sebagai pondasi dasar tampilan. Lihat cara penyusunan template html yang dianjurkan.
       </p>
       
-      <section class="block-samples" data-section="block-samples">
+      <section class="block-samples block-samples--no-sample" data-section="block-samples">
           <details>
-              <summary class="btn btn--ghost d-inline-block margins-unset">
+              <summary class="btn btn--ghost display-inline-block margins-unset">
                   Lihat template dasar
               </summary>
               <pre>
@@ -827,11 +825,8 @@ Text White with low background-color
               ggjjGHGHGjjgg <i be-icon="left-check"></i>
           </button>
 
-          <br/>
-          <br/>
-
           <details>
-              <summary class="btn btn--ghost d-inline-block margins-unset">
+              <summary class="btn btn--ghost display-inline-block margins-unset">
                   View code
               </summary>
               <pre>
@@ -967,10 +962,8 @@ Text White with low background-color
                   Colored link button
               </a>
 
-              <br/><br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -1036,9 +1029,6 @@ Text White with low background-color
                   Mengubah tampilan:
               </p>
               <ul>
-                  <li>
-                      <code>--btn-size</code> nilai bakunya adalah 1, ganti nilai ini untuk mendapatkan ukuran berbeda, alternatif lainnya dengan mengubah nilai properti <code>font-size</code>.
-                  </li>
                   <li>
                       <code>[disabled]</code> menampilkan kondisi tidak bisa digunakan.
                   </li>
@@ -1122,16 +1112,14 @@ Text White with low background-color
                     <span class="avatar__indicator">
                     </span>
                 </span>
-                <span class="avatar" style="--avatar-size: 2;" data-avatar-name="John">
+                <span class="avatar" data-avatar-name="John">
                     <!-- alternative: class="avatar__indicator bg-success" -->
                     <span class="avatar__indicator" style="background-color: var(--color-success-50);">
                     </span>
                 </span>
 
-                <br/><br/>
-
                 <details>
-                    <summary class="btn btn--ghost d-inline-block margins-unset">
+                    <summary class="btn btn--ghost display-inline-block margins-unset">
                         View code
                     </summary>
                     <pre>
@@ -1150,7 +1138,7 @@ Text White with low background-color
     &lt;span class="avatar__indicator"&gt;
     &lt;/span&gt;
 &lt;/span&gt;
-&lt;span class="avatar" style="--avatar-size: 2;" data-avatar-name="John"&gt;
+&lt;span class="avatar" data-avatar-name="John"&gt;
     &lt;!-- alternative: class="avatar__indicator bg-success" --&gt;
     &lt;span class="avatar__indicator" style="background-color: var(--color-success-50);"&gt;
     &lt;/span&gt;
@@ -1169,15 +1157,6 @@ Text White with low background-color
               <h4 data-title="keywords-header">
                   Kelas dan Atribut pendukung
               </h4>
-              
-              <p>
-                  Mengubah tampilan:
-              </p>
-              <ul>
-                  <li>
-                      <code>--avatar-size</code> nilai bakunya adalah 1, ganti nilai ini untuk mendapatkan ukuran berbeda, alternatif lainnya dengan mengubah nilai properti <code>font-size</code>.
-                  </li>
-              </ul>
 
               <p>
                   Fungsi tertentu:
@@ -1205,10 +1184,8 @@ Text White with low background-color
               <span class="badge badge--caution"><span class="visual-aside"><span be-icon="triangle"></span></span> Caution</span>
               <a class="badge badge--low" href="#asd">A Link<span class="visual-indicator" be-icon="external-link"></span></a>
 
-              <br/><br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -1241,15 +1218,6 @@ Text White with low background-color
               <h4 data-title="keywords-header">
                   Kelas dan Atribut pendukung
               </h4>
-              
-              <p>
-                  Mengubah tampilan:
-              </p>
-              <ul>
-                  <li>
-                      <code>--badge-size</code> nilai bakunya adalah 1, ganti nilai ini untuk mendapatkan ukuran berbeda, alternatif lainnya dengan mengubah nilai properti <code>font-size</code>.
-                  </li>
-              </ul>
               
               <p>
                   Mengubah tema warna:
@@ -1309,10 +1277,8 @@ Text White with low background-color
                   <button class="btn btn--icon"><span be-icon="x"></span></button>
               </span>
 
-              <br/><br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -1398,10 +1364,8 @@ class="visual-indicator" be-icon="external-link"&gt;&lt;/span&gt;&lt;/a&gt;
                   </fieldset>
               </fieldset>
 
-              <br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -1481,10 +1445,8 @@ class="visual-indicator" be-icon="external-link"&gt;&lt;/span&gt;&lt;/a&gt;
                   <label class="badge badge--chip" be-switchable><input class="invisible" type="radio" name="switchable-1" class="invisible" data-state-handler checked><span class="active-visible visual-indicator" be-icon="left-check"></span> Opt 2 </label>
               </fieldset>
 
-              <br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -1576,10 +1538,8 @@ class="visual-indicator" be-icon="external-link"&gt;&lt;/span&gt;&lt;/a&gt;
                   Kanan
               </section>
 
-              <br/><br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -1654,11 +1614,9 @@ Tangan dominan:
                 </label>
               </fieldset>
             </section>
-              
-              <br/><br/>
 
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -1741,10 +1699,8 @@ Tangan dominan:
                   </p>
               </div>
 
-              <br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -1802,10 +1758,8 @@ Tangan dominan:
                   <button be-tooltip="Suis praecipites, imagine quae erat: sanctius iuga ventos locum quin aurea fulgura sic.">Dekati aku!</button>
               </section>
 
-              <br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -1817,10 +1771,8 @@ Tangan dominan:
           <section class="block-samples" data-section="block-samples">
               <button class="tooltip--right tooltip--no-pointer tooltip--focus" be-tooltip="Say something!">Set me :focus</button>
 
-              <br/><br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -1842,7 +1794,7 @@ Tangan dominan:
                       <code>[be-tooltip]</code> attribut untuk menampung teks yang akan ditampilkan oleh tooltip elemen.
                   </li>
                   <li>
-                      <code>data-tooltip-active</code> membuat tooltip selalu terlihat.
+                      <code>[data-tooltip-active="true"]</code> membuat tooltip selalu terlihat.
                   </li>
               </ul>
 
@@ -1894,10 +1846,8 @@ Tangan dominan:
                   </div>
               </div>
 
-              <br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -1945,10 +1895,8 @@ Tangan dominan:
                   </div>
               </div>
 
-              <br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -1987,7 +1935,7 @@ Tangan dominan:
           </section>
 
           <p>
-              Jika ingin menulis fungsi javascript, untuk mendapatkan efek tetap muncul walau sudah tidak mendapatkan fokus, tulis script untuk menambahkan attribute <code>[data-popper-active]</code> pada komponen <code>popper</code>, untuk kembali menutup, hilangkan attribute <code>[data-popper-active]</code>.
+              Jika ingin menulis fungsi javascript, untuk mendapatkan efek tetap muncul walau sudah tidak mendapatkan fokus, tulis script untuk menambahkan attribute <code>[data-popper-active="true"]</code> pada komponen <code>popper</code>, untuk kembali menutup, hilangkan attribute <code>[data-popper-active]</code> atau cukup ganti nilainya menjadi false.
           </p>
 
           <section class="paddings-1" data-section="keywords-description">
@@ -2006,7 +1954,7 @@ Tangan dominan:
                       <code>popper--focus</code> aktif saat interaksi <code>:focus</code>, mouse klik atau elemen terkait mendapat fokus.
                   </li>
                   <li>
-                      <code>[data-popper-active]</code> attribute ini membuat komponen <code>popper</code> terlihat walau tanpa ada interaksi dari pengguna, biasanya ini digunakan bersamaan dengan fungsi <code><javascript></code>.
+                      <code>[data-popper-active="true"]</code> attribute ini membuat komponen <code>popper</code> terlihat walau tanpa ada interaksi dari pengguna, biasanya ini digunakan bersamaan dengan fungsi <code>&lt;javascript&gt;</code>.
                   </li>
               </ul>
 
@@ -2087,7 +2035,7 @@ Tangan dominan:
       
       <h3 id="steps">Steps <span class="badge badge--info mid-vertical">Update</span></h3>
       <section>
-          <section class="block-samples overflow-auto" data-section="block-samples">
+          <section class="block-samples overflow-auto" data-section="block-samples" style="padding-top: 2rem;">
               <section class="steps">
                   <section class="step">
                       <div class="step__header">
@@ -2132,7 +2080,7 @@ Tangan dominan:
               </section>
               
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -2241,7 +2189,7 @@ Tangan dominan:
               </section>
 
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -2390,10 +2338,8 @@ Tangan dominan:
                   </ul>
               </nav>
 
-              <br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -2489,10 +2435,8 @@ Tangan dominan:
                   </ul>
               </nav>
 
-              <br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -2541,7 +2485,7 @@ Tangan dominan:
                   <div class="navbar__brand">
                       <a href="#asd">Brand</a>
                   </div>
-                  <label for="navbar-toggle" class="navbar__toggle">
+                  <label for="navbar-toggle" class="navbar__toggle btn btn--icon">
                       <input type="checkbox" id="navbar-toggle" class="invisible" data-toggle-navbar-handler name="toggle-checkbox-2">
 
                       <span class="visual-indicator active-invisible" be-icon="burger-menu">
@@ -2568,10 +2512,8 @@ Tangan dominan:
                   </ul>
               </nav>
 
-              <br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -2579,7 +2521,7 @@ Tangan dominan:
   &lt;div class="navbar__brand"&gt;
       &lt;a href="#asd"&gt;Brand&lt;/a&gt;
   &lt;/div&gt;
-  &lt;label for="navbar-toggle" class="navbar__toggle"&gt;
+  &lt;label for="navbar-toggle" class="navbar__toggle btn btn--icon"&gt;
       &lt;input type="checkbox" id="navbar-toggle" class="invisible" data-toggle-navbar-handler name="toggle-checkbox-2"&gt;
 
       &lt;span class="visual-indicator active-invisible" be-icon="burger-menu"&gt;
@@ -2637,7 +2579,7 @@ Tangan dominan:
                       <code>navbar--vmd-compact</code> meringkaskan tampilan untuk ukuran halaman hingga 1280px.
                   </li>
                   <li>
-                      <code>[data-navbar-active]</code> jika ingin menampilkan <code>navbar--*compact</code> dalam posisi terbuka.
+                      <code>[data-navbar-active="true"]</code> jika ingin menampilkan <code>navbar--*compact</code> dalam posisi terbuka. Jika menggunakan attribut ini pastikan tidak ada elemen <code>&lt;input data-toggle-navbar-handler/&gt;</code>.
                   </li>
               </ul>
 
@@ -2700,10 +2642,8 @@ Tangan dominan:
                   </ul>
               </nav>
 
-              <br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -2818,10 +2758,8 @@ Tangan dominan:
                   })();
               </script>
 
-              <br/><br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -2900,10 +2838,8 @@ Tangan dominan:
                   </footer>
               </dialog>
 
-              <br/><br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -2989,7 +2925,7 @@ Tangan dominan:
               </section>
 
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -3142,11 +3078,8 @@ Tangan dominan:
                   })();
               </script>
 
-              <br/>
-              <br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -3210,10 +3143,8 @@ Tangan dominan:
                   <code>container</code> tanpa batasan lebar, hanya memberi spasi kiri-kanan.
               </div>
 
-              <br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -3288,10 +3219,8 @@ Tangan dominan:
                   </div>
               </div>
 
-              <br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -3366,10 +3295,8 @@ Tangan dominan:
                   </div>
               </div>
 
-              <br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -3421,10 +3348,8 @@ Tangan dominan:
                   <button class="btn btn--normal group__action">Iam Button</button>
               </fieldset>
 
-              <br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -3489,10 +3414,8 @@ Tangan dominan:
                   </label>
               </fieldset>
 
-              <br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -3530,10 +3453,8 @@ Tangan dominan:
                   <div class="group__label">I'm div</div>
               </div>
 
-              <br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -3547,24 +3468,22 @@ Tangan dominan:
           </section>
 
           <p>
-              Untuk membuat ukuran group sesuai lebar anak elemen, tapi tetap memiliki fungsi flex, tambahkan kelas <code>d-inline-flex</code>.
+              Untuk membuat ukuran group sesuai lebar anak elemen, tapi tetap memiliki fungsi flex, tambahkan kelas <code>display-inline-flex</code>.
           </p>
 
           <section class="block-samples" data-section="block-samples">
-              <div class="group-vertical group--border d-inline-flex shadow">
+              <div class="group-vertical group--border display-inline-flex shadow">
                   <button class="btn btn--normal group__action">I am a button</button>
                   <button class="btn btn--important group__action">I am too</button>
                   <button class="btn btn--critical group__action">I am three</button>
               </div>
 
-              <br/><br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
-&lt;div class="group-vertical group--border d-inline-flex shadow"&gt;
+&lt;div class="group-vertical group--border display-inline-flex shadow"&gt;
   &lt;button class="btn btn--normal group__action"&gt;I am a button&lt;/button&gt;
   &lt;button class="btn btn--important group__action"&gt;I am too&lt;/button&gt;
   &lt;button class="btn btn--critical group__action"&gt;I am three&lt;/button&gt;
@@ -3619,10 +3538,8 @@ Tangan dominan:
                   </div>
               </fieldset>
 
-              <br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -3778,7 +3695,7 @@ Tangan dominan:
               </fieldset>
 
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -3917,7 +3834,7 @@ Tangan dominan:
               </fieldset>
 
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -4053,7 +3970,7 @@ Tangan dominan:
               </form>
 
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -4154,7 +4071,7 @@ Tangan dominan:
               </form>
 
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -4228,7 +4145,7 @@ Tangan dominan:
               </form>
 
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -4332,7 +4249,7 @@ Tangan dominan:
               </form>
 
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -4467,10 +4384,8 @@ Tangan dominan:
                   </div>
               </div>
 
-              <br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -4604,12 +4519,9 @@ Tangan dominan:
                       });
                   })();
               </script>
-              
-              <br/>
-              <br/>
 
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -4641,17 +4553,15 @@ Tangan dominan:
                         <img class="img--fit-fill" src="./assets/vasilis-karkalas-i8cDJOiIvTo-unsplash.webp" />
                         <span class="active-visible">Visible when floating (:popover-open())</span>
                         
-                        <button class="btn btn--icon tooltip--right margin-top-.50 margin-right-.50 position-absolute inset-top-left" data-tooltip-active popovertarget="floater-2" popovertargetaction="toggle" be-tooltip="Click me!">
+                        <button class="btn btn--icon tooltip--right margin-top-.50 margin-right-.50 position-absolute inset-top-left" data-tooltip-active="true" popovertarget="floater-2" popovertargetaction="toggle" be-tooltip="Click me!">
                             <span class="invisible">Toggle floater</span>
                             <i be-icon="rectangle"></i>
                         </button>
                     </section>
                 </div>
-                <br/>
-                <br/>
 
                 <details>
-                    <summary class="btn btn--ghost d-inline-block margins-unset">
+                    <summary class="btn btn--ghost display-inline-block margins-unset">
                         View code
                     </summary>
                     <pre>
@@ -4660,7 +4570,7 @@ Tangan dominan:
         &lt;img class="img--fit-fill" src="./assets/vasilis-karkalas-i8cDJOiIvTo-unsplash.webp" /&gt;
         &lt;span class="active-visible"&gt;Visible when floating (:popover-open())&lt;/span&gt;
         
-        &lt;button class="btn btn--icon tooltip--right margin-top-.50 margin-right-.50 position-absolute inset-top-left" data-tooltip-active popovertarget="floater-2" popovertargetaction="toggle" be-tooltip="Click me!"&gt;
+        &lt;button class="btn btn--icon tooltip--right margin-top-.50 margin-right-.50 position-absolute inset-top-left" data-tooltip-active="true" popovertarget="floater-2" popovertargetaction="toggle" be-tooltip="Click me!"&gt;
             &lt;span class="invisible"&gt;Toggle floater&lt;/span&gt;
             &lt;i be-icon="rectangle"&gt;&lt;/i&gt;
         &lt;/button&gt;
@@ -4762,10 +4672,8 @@ Tangan dominan:
                 </section>
             </article>
 
-            <br/>
-
             <details>
-                <summary class="btn btn--ghost d-inline-block margins-unset">
+                <summary class="btn btn--ghost display-inline-block margins-unset">
                     View code
                 </summary>
                 <pre>
@@ -4822,10 +4730,8 @@ Tangan dominan:
                 </section>
             </article>
 
-            <br/>
-
             <details>
-                <summary class="btn btn--ghost d-inline-block margins-unset">
+                <summary class="btn btn--ghost display-inline-block margins-unset">
                     View code
                 </summary>
                 <pre>
@@ -4919,10 +4825,8 @@ Tangan dominan:
                   </article>
               </div>
 
-              <br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -5052,10 +4956,8 @@ Tangan dominan:
                   </article>
               </div>
 
-              <br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -5185,10 +5087,8 @@ Tangan dominan:
                   </article>
               </div>
 
-              <br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -5446,12 +5346,9 @@ Tangan dominan:
                     </section>
                 </article>
             </div>
-            
-            <br/>
-            <br/>
 
             <details>
-                <summary class="btn btn--ghost d-inline-block margins-unset">
+                <summary class="btn btn--ghost display-inline-block margins-unset">
                     View code
                 </summary>
                 <pre>
@@ -5948,10 +5845,8 @@ Tangan dominan:
             </button>
           </section>
 
-        <br/>
-
         <details>
-        <summary class="btn btn--ghost d-inline-block margins-unset">
+        <summary class="btn btn--ghost display-inline-block margins-unset">
         View code
         </summary>
         <pre>
@@ -6305,7 +6200,7 @@ Tangan dominan:
               </div>
 
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -6447,7 +6342,7 @@ Tangan dominan:
               </div>
 
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -6537,7 +6432,7 @@ Tangan dominan:
               </p>
               <ul>
                   <li>
-                      <code>[data-accordion-active]</code> tambahkan attribut ini ke komponen <code>accordion</code> untuk membuat bilah tersebut terbuka.
+                      <code>[data-accordion-active="true"]</code> tambahkan attribut ini ke komponen <code>accordion</code> untuk membuat bilah tersebut terbuka, pastikan tidak ada elemen <code>&lt;input data-accordion-select-handler&gt;</code>.
                   </li>
                   <li>
                       <code>accordions--vertical</code> menampilkan secara tegak.
@@ -6594,7 +6489,7 @@ Tangan dominan:
               </section>
 
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -6634,7 +6529,7 @@ Tangan dominan:
                   <i class="txt-white" be-icon="i"></i>
               </div>
               <div class="notice__content">
-                  BakungCss menyediakan kelas bantuan untuk kelola tab kontrol per komponen sebanyak 15, tetapi jika dibuat fungsi javascript untuk kelola kontrol tabs, tentu batasan yang ada dapat diatasi. Jika menulis fungsi javascript, untuk membuat bilah aktif tambahkan attribute <code>[data-tab-active]</code> pada elemen <code>tab__nav</code> dan <code>tab__content</code>.
+                  BakungCss menyediakan kelas bantuan untuk kelola tab kontrol per komponen sebanyak 15, tetapi jika dibuat fungsi javascript untuk kelola kontrol tabs, tentu batasan yang ada dapat diatasi. Jika menulis fungsi javascript, untuk membuat bilah aktif tambahkan attribute dengan nilai <code>[data-tab-active="true"]</code> pada elemen <code>tab__nav</code> dan <code>tab__content</code>.
               </div>
           </section>
 
@@ -6642,6 +6537,15 @@ Tangan dominan:
               <h4 data-title="keywords-header">
                   Kelas dan Atribut pendukung
               </h4>
+              
+              <p>
+                  Fungsi tertentu:
+              </p>
+              <ul>
+                  <li>
+                      <code>[data-tab-active="true"]</code> untuk membuat bilah aktif, pastikan tidak ada elemen <code>&lt;input data-tab-select-handler name="tab-handler"&gt;</code>.
+                  </li>
+              </ul>
               
               <p>
                   Mengubah posisi tampil:
@@ -6700,10 +6604,8 @@ Tangan dominan:
                   </section>
               </div>
 
-              <br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -6779,7 +6681,7 @@ Kamu bisa menaruh komponen appear dimana saja!.
                       <input type="checkbox" id="appear-left" class="invisible" data-appear-handler name="appear-left">
                       <div class="appear__overflow">
                           <div class="appear__content">
-                          <nav class="navbar navbar--compact navbar--no-hover" data-navbar-active>
+                          <nav class="navbar navbar--compact navbar--no-hover" data-navbar-active="true">
                                   <div class="navbar__brand">
                                   <a href="#asd">Brand</a>
                                   </div>
@@ -6839,10 +6741,8 @@ Kamu bisa menaruh komponen appear dimana saja!.
                   </div>
               </div>
 
-              <br/><br/>
-
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       View code
                   </summary>
                   <pre>
@@ -6871,7 +6771,7 @@ Kamu bisa menaruh komponen appear dimana saja!.
       &lt;input type="checkbox" id="appear-left" class="invisible" data-appear-handler name="appear-left"&gt;
       &lt;div class="appear__overflow"&gt;
           &lt;div class="appear__content"&gt;
-          &lt;nav class="navbar navbar--compact navbar--no-hover" data-navbar-active&gt;
+          &lt;nav class="navbar navbar--compact navbar--no-hover" data-navbar-active="true"&gt;
                   &lt;div class="navbar__brand"&gt;
                   &lt;a href="#asd"&gt;Brand&lt;/a&gt;
                   &lt;/div&gt;
@@ -6949,9 +6849,9 @@ Kamu bisa menaruh komponen appear dimana saja!.
               Dalam kondisi tertentu kamu ingin gabungan efek melayang dan efek mendorong saat ukuran halaman lebih luas, maka ganti <code>appear--offcanvas</code> dengan salah satu kelas dari <code>appear--vsm-offcanvas</code> untuk batasan ukuran halaman hingga 768px, dan <code>appear--vmd-offcanvas</code> untuk batasan ukuran halaman hingga 1280px.
           </p>
 
-          <section class="block-samples" data-section="block-samples">
+          <section class="block-samples block-samples--no-sample" data-section="block-samples">
               <details>
-                  <summary class="btn btn--ghost d-inline-block margins-unset">
+                  <summary class="btn btn--ghost display-inline-block margins-unset">
                       Tata letak elemen penampung berdasar lokasi muncul komponen <code>appear</code>:
                   </summary>
                   <pre>
@@ -7055,7 +6955,7 @@ Kamu bisa menaruh komponen appear dimana saja!.
               </p>
               <ul>
                   <li>
-                      <code>[data-appear-active]</code> untuk membuat komponen <code>appear</code> terbuka.
+                      <code>[data-appear-active="true"]</code> untuk membuat komponen <code>appear</code> terbuka, pastikan tidak ada elemen <code>&lt;input data-appear-handler&gt;</code>.
                   </li>
                   <li>
                       <code>appear--fix</code> untuk membuat komponen <code>appear</code> memiliki ukuran pasti, beri ukuran yang diinginkan melalui variable css <code>--appear-size</code>.
